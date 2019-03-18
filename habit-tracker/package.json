@@ -2,6 +2,7 @@
   "name": "habit-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
