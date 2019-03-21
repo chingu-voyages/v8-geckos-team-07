@@ -1,0 +1,16 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "v8-geckos-team-07",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
