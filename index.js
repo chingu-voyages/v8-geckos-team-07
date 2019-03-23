@@ -6,6 +6,10 @@ const habits = require('./routes/api/habits')
 
 const app = express();
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
