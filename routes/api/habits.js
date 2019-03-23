@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 
 // Habit Model
-const Habit = require('../../models/Habit');
+const Habit = require('../../models/Habit.js');
 
 //@route 	POST api/items
 //@desc 	Create a habit
