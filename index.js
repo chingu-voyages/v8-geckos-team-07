@@ -1,11 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-
 const habits = require('./routes/api/habits')
-
 const app = express();
-
+var path = require('path');
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
