@@ -23,9 +23,9 @@ const Layout = ({ children, contentCenter }) => {
         <p>
           Thank you {' '}
           <span role="img" aria-label="heart emoji">
-            ??
+            ❤️
           </span>{' '}
-          Esau Silva
+          <a href="https://blog.bitsrc.io/react-oauth-authentication-with-firebase-dfe0e8c5d0d4">Esau Silva</a>
         </p>
       </footer>
     </section>

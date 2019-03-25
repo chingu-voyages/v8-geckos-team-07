@@ -14,6 +14,7 @@ export default WrappedComponent => {
         if (user) {
           //User is signed in.
           console.info('User is signed in.');
+          this.setState({ providerData: user.providerData });
         } else {
           console.info('Must be authenticated');
           this.props.history.push('/');
