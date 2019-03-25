@@ -21,7 +21,6 @@ main {
 main.content-center {
   display: grid;
   justify-items: center;
- 
 }
 
 footer {
@@ -31,4 +30,6 @@ footer {
   border-top: 1px solid rgba(34, 36, 38, 0.15);
   margin-top: 20px;
 }
+
+
 

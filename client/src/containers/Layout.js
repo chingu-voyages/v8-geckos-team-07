@@ -16,17 +16,22 @@ const Layout = ({ children, contentCenter }) => {
   return (
     <section>
       <header>
-        <h1>OAuth Authentication with Firebase</h1>
+        <h1>Habit Tracker</h1>
       </header>
       <main className={contentCenter ? 'content-center' : ''}>{children}</main>
       <footer>
-        <p>
-          Thank you {' '}
-          <span role="img" aria-label="heart emoji">
-            ❤️
-          </span>{' '}
-          <a href="https://blog.bitsrc.io/react-oauth-authentication-with-firebase-dfe0e8c5d0d4">Esau Silva</a>
-        </p>
+        
+          <div id="special_thanks">
+          <p>
+            Thank you {' '}
+            <span role="img" aria-label="heart emoji">
+              ❤️
+            </span>{' '}
+            <a href="https://blog.bitsrc.io/react-oauth-authentication-with-firebase-dfe0e8c5d0d4" target="_blank" rel="noopener noreferrer">Esau Silva</a>
+          </p> 
+          </div>
+          
+        
       </footer>
     </section>
   );
