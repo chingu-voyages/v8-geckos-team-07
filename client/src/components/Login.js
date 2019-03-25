@@ -10,7 +10,8 @@ const buttonList = {
     visible: true,
     provider: () => {
       const provider = auth.googleOAuth();
-      provider.addScope('user');
+      provider.addScope('profile');
+      provider.addScope('email');
       return provider;
     }
   },
