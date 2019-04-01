@@ -50,9 +50,35 @@ header h1 {
     padding: 2%;
 }
 
+/* Font Styles */
 h2 {
     font-size: 1.5em;
     font-family: 'Life Savers', cursive;
     line-height: 1.3;
     color: #203f49;
+}
+h2::after {
+    content:'';
+    display: block;
+    border-bottom: 2px solid #203f49;
+    max-width: 60%;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+    color: #203f49;
+}
+p {
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* CSS Styling */
+main {
+    padding:4% 8%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
