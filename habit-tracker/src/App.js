@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import userIcon from './images/user-icon.svg';
+import Header from './components/header'
+import HeaderLoggedin from './components/header-logged-in'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <header className="header">
-          <h1>Habit Tracker</h1>
-        </header>
-
-        <header className="headerLogin">
-          <h1>Habit Tracker</h1>
-          <div className="user">
-            <p>Hello, <img src={userIcon} alt="user icon"/></p>
-            <p>User Name</p>
-          </div>
-        </header>
-        </div>
+      <div className="App" >
+        <Header></Header>
+        <HeaderLoggedin></HeaderLoggedin>
+      </div>
     );
   }
 }
