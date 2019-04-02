@@ -1,0 +1,8 @@
+/* Google Fonts */
+/* font-family: 'Life Savers', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Life+Savers');
+
+body {
+    background: url('images/bg.svg') repeat;
+    background-size: 60px;
+}
