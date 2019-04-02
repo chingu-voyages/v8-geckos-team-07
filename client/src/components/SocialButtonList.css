@@ -1,0 +1,20 @@
+.btn__social--list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn__social {
+  width: 150px;
+}
+
+.btn--google {
+  background-color: #1b1c1d;
+  color: white;
+  
+}
+
+.btn--google:hover {
+  background-color: #232425;
+}
+
