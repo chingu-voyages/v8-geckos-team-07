@@ -77,7 +77,7 @@ class Dashboard extends Component {
     render() {
         return (
             <Layout>
-                <h1>Secure Area</h1>
+                <h1>User Logged In</h1>
                 <SocialProfileList
                     auth={auth.getAuth}
                     providerData={this.state.providerData}

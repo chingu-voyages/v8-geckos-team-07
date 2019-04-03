@@ -1,11 +1,6 @@
 section {
-  display: grid;
-  grid-template-columns: 1fr minmax(360px, 991px) 1fr;
   grid-template-areas: '. h .' '. c .' '. f .';
   grid-gap: 5px;
-  margin-top: 20px;
-  background-color: #282c34;
-  color: white;
 }
 
 header {
