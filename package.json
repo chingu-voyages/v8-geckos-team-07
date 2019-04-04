@@ -4,7 +4,7 @@
   "description": "server side of the habit tracker being built with react",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "concurrently  \"node index.js\" \"cd client && npm start\"",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "server": "nodemon index.js"
   },

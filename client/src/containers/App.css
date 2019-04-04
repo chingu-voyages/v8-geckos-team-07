@@ -1,32 +1,76 @@
-.App {
-  text-align: center;
+/* Google Fonts */
+/* font-family: 'Life Savers', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Life+Savers');
+
+body {
+    background: url('../images/bg.svg') repeat;
+    background-size: 60px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    color: #203f49;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* Home page header */
+header {
+    background-color: #203f49;
+    width: 94%;
+    padding: 15px 3% 10px 3%;
+    color: #ffffff;
+}
+header h1 {
+    text-align: center;
+    font-size: 2.3em;
+    font-family: 'Life Savers', cursive;
+    line-height: 1.5;
+    letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Header for when user logged in */
+.headerLogin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerLogin h1 {
+    text-align: left;
+    font-size: 1.5em;
+}
+.headerLogin .user img {
+    width: 25px;
+    height: 20px;
+    padding: 2%;
 }
 
-.App-link {
-  color: #61dafb;
+/* Font Styles */
+h2 {
+    font-size: 1.5em;
+    font-family: 'Life Savers', cursive;
+    line-height: 1.3;
+    color: #203f49;
+}
+h2::after {
+    content:'';
+    display: block;
+    border-bottom: 2px solid #203f49;
+    max-width: 60%;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+    color: #203f49;
+}
+p {
+    margin-bottom: 10px;
+    line-height: 1.3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* CSS Styling */
+main {
+    padding:4% 8%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
