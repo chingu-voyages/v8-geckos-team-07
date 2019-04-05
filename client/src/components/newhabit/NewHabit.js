@@ -1,35 +1,63 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './newhabit.css'
 
 class NewHabit extends Component {
     state = {
-        user: '',
+        name: 'test-user',
         habit: '',
         smart: [],
         length: '',
-        intervals: 0,
-        date: '',
+        intervals: '',
+        date: new Date(),
+        lengthValid: true,
+        fieldsValid: true,
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('The following habit was submitted: ' + this.state.habit);
+        if (this.state.habit.length > 0 && this.state.length.length > 0 && this.state.intervals.length > 0 && this.state.intervals != 'select'){
+            this.setState({fieldsValid: true});    
+            const { name, habit, smart, length, intervals, date } = this.state;
+            axios.post('/api/habits/newhabit', { name, habit, smart, length, intervals, date })
+                .then((result) => {
+                  console.log(result.data);  
+                })
+                .catch((error) => {
+                    console.log(error);
+            })
+        } else {
+            this.setState({fieldsValid: false});
+        }
     }
 
-    handleHabit = (event) => {
-        this.setState({habit: event.target.value})
+    onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value});
     }
-    handleSmart = (event) => {
-        this.setState({smart: event.target.value})
-    }
-    handleLength = (event) => {
-        this.setState({length: event.target.value})
-    }
-    handleInterval = (event) => {
-        this.setState({interval: event.target.value})
+
+    onLengthChange = (e) => {
+        const numCheck = /^[0-9]*$/;
+        if (numCheck.test(e.target.value)) {
+            this.setState({ length: e.target.value, lengthValid: true })
+        } else {
+            this.setState({ lengthValid: false })
+        }
     }
 
     render(){
+        let lenError = null
+        if (this.state.lengthValid === false) {
+            lenError = <p className="error">Please enter a number for length</p>
+        } else {
+            lenError = null
+        }
+        let fieldErr = null
+        if (this.state.fieldsValid === false) {
+            fieldErr = <p className="error">Please enter required fields</p>
+        } else {
+            fieldErr = null
+        }
+
         return (
             <div className="newHabit">
                 <form onSubmit={this.handleSubmit}>
@@ -39,26 +67,29 @@ class NewHabit extends Component {
                     <label>
                         Habit:
                     </label>
-                        <input type='text' placeholder="Please enter new habit to be tracked"value={this.state.habit} onChange={this.handleHabit} />
+                        <input type='text' name='habit' placeholder="Please enter new habit to be tracked"value={this.state.habit} onChange={this.onChange} />
                     <label>
-                        Smart Goals:
+                        Smart Goals: (OPTIONAL)
                     </label>
-                        <input type='text' placeholder="Please separate goals with commas" 
-                        value={this.state.smart} onChange={this.handleSmart} />
+                        <input type='text' name='smart' placeholder="Please separate goals with commas" 
+                        value={this.state.smart} onChange={this.onChange} />
                     <label>
                         Length of Time to Track:
                     </label>
-                        <input type='text' placeholder="Please enter time in months" value={this.state.length} onChange={this.handleLength} />
+                        <input type='text' name='length' placeholder="Please enter time in months" value={this.state.length} onChange={this.onLengthChange} />
                     <label>
                         Daily Checkin Intervals:
                     </label>
-                        <select value={this.state.intervals} onChange={this.handleInterval}>
+                        <select name='intervals' value={this.state.intervals} onChange={this.onChange}>
+                            <option value="select">Select One Option Please</option>
                             <option value="daily">Daily</option>
                             <option value="twoDays">Every Two Days</option>
                             <option value="weekly">Weekly</option>
                             <option value="biWeekly">Bi-Weekly</option>
                             <option value="monthly">Monthly</option>
                         </select>
+                    { lenError }
+                    { fieldErr }
                     <input className="submit" type="submit" value="Start Tracking"/>                   
                 </form>
             </div>
