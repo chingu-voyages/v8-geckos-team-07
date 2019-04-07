@@ -1,16 +1,19 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-
 const habits = require('./routes/api/habits')
-
 const app = express();
+const dbKey = process.env.MONGODB_API_KEY
+var path = require('path');
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+const db = require(dbKey).mongoURI;
 
 //Connect to Mongo
 mongoose.connect(db)
