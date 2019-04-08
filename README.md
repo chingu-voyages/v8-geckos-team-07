@@ -4,5 +4,3 @@ Add-project-description-here | Voyage-8 | https://chingu.io/
 # Development Build
 
 https://habit-tracker-gecko-develop.herokuapp.com/
-
-~~ paulywill is testing on heroku ~~
