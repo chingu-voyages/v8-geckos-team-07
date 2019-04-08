@@ -11,8 +11,9 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
-// DB Config
-const db = require('./config/keys').mongoURI;
+// DB Config from .env file
+require('dotenv').config()
+const db = process.env.MONGO_URI
 
 //Connect to Mongo
 mongoose.connect(db)
