@@ -7,7 +7,7 @@
     "start": "concurrently  \"node index.js\" \"cd client && npm start\"",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "server": "nodemon index.js",
-    "postinstall": "cd client && yarn install",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "author": "patrick connolly",
   "license": "MIT",
