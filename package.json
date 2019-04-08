@@ -6,7 +6,8 @@
   "scripts": {
     "start": "concurrently  \"node index.js\" \"cd client && npm start\"",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "postinstall": "cd client && npm install"
   },
   "author": "patrick connolly",
   "license": "MIT",
