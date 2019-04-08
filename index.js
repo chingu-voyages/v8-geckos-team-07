@@ -24,7 +24,7 @@ mongoose.connect(db)
 app.use('/api/habits', habits);
 
 
-//TESTING - https://tylermcginnis.com/react-router-cannot-get-url-refresh/
+// Point to client's index
 app.get('*', function (req, res) {
 	res.sendFile(path.join(__dirname, '/client/build/index.html'), function (err) {
 		if (err) {
