@@ -1,5 +1,8 @@
 {
   "name": "habit-tracker-server",
+  "engines": {
+    "node": "10.0.0"
+  },
   "version": "1.0.0",
   "description": "server side of the habit tracker being built with react",
   "main": "index.js",
@@ -21,7 +24,4 @@
   "devDependencies": {
     "nodemon": "^1.18.10"
   }
-  "engines": {
-    "node": "=10.0.0"
-  },
 }
