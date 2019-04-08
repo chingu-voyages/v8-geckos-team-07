@@ -1,3 +1,7 @@
 language: node_js
 
-script: npm test
+before_script:
+- npm install firebase --build-from-source
+
+script: 
+- npm test
