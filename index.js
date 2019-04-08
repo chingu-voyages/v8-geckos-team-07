@@ -23,6 +23,17 @@ mongoose.connect(db)
 // Use Routes
 app.use('/api/habits', habits);
 
+
+//TESTING - https://tylermcginnis.com/react-router-cannot-get-url-refresh/
+app.get('/*', function (req, res) {
+	res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function (err) {
+		if (err) {
+			res.status(500).send(err)
+		}
+	})
+})
+
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log('Server started on port ' + port));
