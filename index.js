@@ -25,8 +25,8 @@ app.use('/api/habits', habits);
 
 
 //TESTING - https://tylermcginnis.com/react-router-cannot-get-url-refresh/
-app.get('/*', function (req, res) {
-	res.sendFile(path.join(__dirname, 'index.html'), function (err) {
+app.get('*', function (req, res) {
+	res.sendFile(path.join(__dirname, '/client/build/index.html'), function (err) {
 		if (err) {
 			res.status(500).send(err)
 		}
