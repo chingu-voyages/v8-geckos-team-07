@@ -1,8 +1,5 @@
 {
   "name": "habit-tracker-server",
-  "engines": {
-    "node": "10.0.0"
-  },
   "version": "1.0.0",
   "description": "server side of the habit tracker being built with react",
   "main": "index.js",
@@ -10,7 +7,7 @@
     "start": "concurrently  \"node index.js\" \"cd client && npm start\"",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "server": "nodemon index.js",
-    "postinstall": "cd client && npm install"
+    "postinstall": "cd client && yarn install"
   },
   "author": "patrick connolly",
   "license": "MIT",
