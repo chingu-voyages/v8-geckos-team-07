@@ -1,7 +1,7 @@
 language: node_js
 
 before_script:
-- npm install firebase --build-from-source
+- npm install --build-from-source grpc
 
 script: 
 - npm test
