@@ -6,7 +6,6 @@ import About from '../components/About';
 import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/newhabit/NewHabit';
 
-import Header from '../components/header'
 import './App.css';
 
 class App extends Component {

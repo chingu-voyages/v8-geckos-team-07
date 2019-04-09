@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Layout.css';
+import Header from '../components/header'
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -15,9 +16,7 @@ const defaultProps = {
 const Layout = ({ children, contentCenter }) => {
   return (
     <section>
-      <header>
-        <h1>Habit Tracker</h1>
-      </header>
+      <Header />
       <main className={contentCenter ? 'content-center' : ''}>
       {children}
       
