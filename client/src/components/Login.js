@@ -5,6 +5,9 @@ import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
 import { auth } from '../firebase';
 
+import GoogleButton from '../images/btn_google_signin_dark_normal_web.png'
+
+
 const buttonList = {
   google: {
     visible: true,
@@ -29,10 +32,9 @@ class Login extends Component {
 
   render() {
     return (
-      <Layout contentCenter={true}>
-        <p>Connect With</p>
-        <SocialButtonList buttonList={buttonList} auth={auth.getAuth} />
-        <Link to="/about">About</Link>
+      <Layout>
+        <button><img src={GoogleButton} alt="Sign in using Google"/></button>
+        <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
       </Layout>
     );
   }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
-import About from '../components/About';
 import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/newhabit/NewHabit';
 
@@ -17,7 +16,6 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Login} />
           <Route path="/dashboard" component={withAuthentication(Dashboard)} />
-          <Route path="/about" component={About} />
           <Route path="/newhabit" component={NewHabit} />
           <main>
             <h2>Test Heading Level 2</h2>

@@ -1,21 +1,15 @@
-section {
-  grid-template-areas: '. h .' '. c .' '. f .';
-  grid-gap: 5px;
-}
-
-header {
-  grid-area: h;
-  text-align: center;
-}
 
 main {
-  grid-area: c;
+  text-align: center;
+  background-color:#fff;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #203f49;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
  
-}
-
-main.content-center {
-  display: grid;
-  justify-items: center;
 }
 
 footer {
