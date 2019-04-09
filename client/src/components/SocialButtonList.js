@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import './SocialButtonList.css';
+import GoogleLogo from '../images/btn_google_dark_normal_ios.svg'
 
 const propTypes = {
   buttonList: PropTypes.shape({
@@ -52,12 +52,12 @@ const SocialButtonList = ({ history, buttonList, auth, currentProviders }) => {
     const visible = buttonList[provder].visible;
 
     return (
-      <button
+      <button 
         key={provder}
         className={`btn__social btn--${provder} ${!visible && 'hidden'}`}
         onClick={e => authenticate(e, provder)}
-      >
-        {provder}
+      ><img src={GoogleLogo} alt="Google logo"/>
+        Sign in using Google
       </button>
     );
   };
