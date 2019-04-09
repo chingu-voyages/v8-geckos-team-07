@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Layout.css';
 import Header from '../components/header'
+import HeaderLoggedIn from '../components/header-logged-in'
 
 const propTypes = {
   children: PropTypes.node.isRequired,
