@@ -51,7 +51,7 @@ class Dashboard extends Component {
         this.setState({ buttonList, providerData });
     };
 
-    handleUnliknedProvider = (providerName, providerData) => {
+    handleUnlinkedProvider = (providerName, providerData) => {
         if (providerData.length < 1) {
             auth
                 .getAuth()
@@ -94,7 +94,7 @@ class Dashboard extends Component {
                     onClick={() => auth.getAuth().signOut()}
                 >
                     Logout
-        </button>
+                </button>
             </Layout>
         );
     }

@@ -17,7 +17,6 @@ const Layout = ({ children, contentCenter }) => {
   return (
     <section>
       <Header />
-      <HeaderLoggedIn />
       <main className={contentCenter ? 'content-center' : ''}>
       <h2>Start Tracking a Daily Habit</h2>
       {children}
