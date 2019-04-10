@@ -87,7 +87,7 @@ main {
     border: 2px solid #203f49;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 main h2::after {
     border-bottom: none;
