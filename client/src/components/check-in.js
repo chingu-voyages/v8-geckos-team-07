@@ -29,9 +29,9 @@ const CheckIn = (props) => {
             <option name="mood" value="skip">Sick</option>
           </select>
       
-          <label for="evaluation">What went well? or Why did you fail?</label><br>
+          <label for="evaluation">What went well? or Why did you fail?</label><br />>
           <textarea id="evaluation" name="personalEvaluation"></textarea>
-          <label for="notes">Personal Notes:</label><br>
+          <label for="notes">Personal Notes:</label><br />>
           <textarea id="notes" name="personalNotes"></textarea>
 
           <button type="submit">Submit</button>
