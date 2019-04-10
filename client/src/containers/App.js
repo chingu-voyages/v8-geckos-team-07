@@ -17,7 +17,9 @@ class App extends Component {
           <Route path="/" exact component={Login} />
           <Route path="/dashboard" component={withAuthentication(Dashboard)} />
           <Route path="/newhabit" component={NewHabit} />
+          <main>
           
+          </main >
         </Switch>
       </Router>
 
