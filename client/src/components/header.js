@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UserIcon from '../images/user-icon.svg'
 
 const Header = (props) => {
@@ -6,7 +6,7 @@ const Header = (props) => {
 
         <header className="headerLogin">
         
-            <h1>[placeholder]</h1>
+            <h2>[placeholder]</h2>
             <h1>Habit Tracker</h1>
             <div className="user">
                 <p>Hello, <img src={UserIcon} alt="user icon" /></p>

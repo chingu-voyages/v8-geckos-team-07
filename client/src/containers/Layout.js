@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from '../components/header'
-import HeaderLoggedIn from '../components/header-logged-in'
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -20,9 +19,6 @@ const Layout = ({ children, contentCenter }) => {
       <main className={contentCenter ? 'content-center' : ''}>
       <h2>Start Tracking a Daily Habit</h2>
       {children}
-      
-      
-       
       </main>
       <footer>
         
