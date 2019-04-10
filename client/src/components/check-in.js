@@ -8,11 +8,11 @@ const CheckIn = (props) => {
          
         <fieldset>  
         <legend>How did you do today?</legend>
-          <input id="1" type="radio" name="check-in" value="killed-it"> <label for="1">Killed it</label>
-          <input id="2" type="radio" name="check-in" value="completed"> <label for="2">Completed</label>
-          <input id="3" type="radio" name="check-in" value="tried"> <label for="3">Tried</label>
-          <input id="4" type="radio" name="check-in" value="failed"> <label for="4">Failed</label>
-          <input id="5" type="radio" name="check-in" value="skip"> <label for="5">Skip*</label>
+          <input id="1" type="radio" name="check-in" value="killed-it"/> <label for="1">Killed it</label>
+          <input id="2" type="radio" name="check-in" value="completed"/> <label for="2">Completed</label>
+          <input id="3" type="radio" name="check-in" value="tried"/> <label for="3">Tried</label>
+          <input id="4" type="radio" name="check-in" value="failed"/> <label for="4">Failed</label>
+          <input id="5" type="radio" name="check-in" value="skip"/> <label for="5">Skip*</label>
           <p>*Skip is for non-daily habits you are tracking. Or can be used when you are sick or on vacation.</p>
           </fieldset>
             
