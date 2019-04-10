@@ -11,8 +11,9 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
-// DB Config
-const db = require('./config/keys').mongoURI;
+// DB Config from .env file
+require('dotenv').config()
+const db = process.env.MONGO_URI
 
 //Connect to Mongo
 mongoose.connect(db)
@@ -21,6 +22,17 @@ mongoose.connect(db)
 
 // Use Routes
 app.use('/api/habits', habits);
+
+
+// Point to client's index
+app.get('*', function (req, res) {
+	res.sendFile(path.join(__dirname, '/client/build/index.html'), function (err) {
+		if (err) {
+			res.status(500).send(err)
+		}
+	})
+})
+
 
 const port = process.env.PORT || 5000;
 
