@@ -35,13 +35,16 @@ class SocialProfileList extends PureComponent {
                     alt={providerName}
                     className="container__profile--photo"
                 />
-                <p>{providerName}</p>
+            
+                {/*  TODO: add in user's settings section 
                 <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
                 >
                     Unlink
-        </button>
+                </button>
+                */}
+                
             </div>
         );
     };
@@ -49,9 +52,7 @@ class SocialProfileList extends PureComponent {
     render() {
         return (
             <Fragment>
-                <p className="text--center">
-                    <strong>Connected Social Accounts</strong>
-                </p>
+                
                 <div className="btn__profiles--list">
                     {this.props.providerData.map(this.renderProfileList)}
                 </div>

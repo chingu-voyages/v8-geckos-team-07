@@ -83,9 +83,7 @@ class Dashboard extends Component {
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnliknedProvider}
                 />
-                <p style={{ textAlign: 'center' }}>
-                    <strong>Connect Other Social Accounts</strong>
-                </p>
+                
                 <SocialButtonList
                     buttonList={this.state.buttonList}
                     auth={auth.getAuth}
