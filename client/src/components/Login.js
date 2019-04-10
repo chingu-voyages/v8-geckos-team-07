@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
 import { auth } from '../firebase';
