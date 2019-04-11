@@ -8,18 +8,20 @@ assignees: 'patricktownley, paulywill, pjconnolly12, SaraSweetie '
 
 ---
 
-**Describe the bug**
+## Describe the bug
 
 
-**To Reproduce**
+## To Reproduce
 
 
-**Expected behavior**
+## Expected behavior
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
+
+## Screenshots
 If applicable, add screenshots to help explain your problem.
 
 
-**Additional context**
+## Additional context
 Add any other context about the problem here.
+
