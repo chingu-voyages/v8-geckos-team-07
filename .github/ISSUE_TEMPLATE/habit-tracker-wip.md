@@ -7,10 +7,10 @@ assignees: 'patricktownley, paulywill, pjconnolly12, SaraSweetie '
 
 ---
 
-**Task Description:**
+## Task Description
 
-**Function:**
+## Function
 
-**Feature #:**
+## Feature 
 
 *Do not forget to set Epic, Milestone, and Estimate (1 = half workday)!*
