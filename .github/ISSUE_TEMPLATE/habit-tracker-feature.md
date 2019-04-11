@@ -6,18 +6,18 @@ labels: 'feature'
 assignees: 'paulywill'
 
 ---
-**Task List/ WIPs**
+## Task List/ WIPs
 - [ ] - work item 1
 - [ ] - work item 2
 - [ ] - work item 3
 
-**User Story**
+## User Story
 Bob...
 
-**Acceptance Criteria**
+## Acceptance Criteria
 - [ ] - unit test 1
 - [ ] - unit test 2
 - [ ] - unit test 3
 
-**Definition of Done**
+## Definition of Done**
 😀 Team is happy!
