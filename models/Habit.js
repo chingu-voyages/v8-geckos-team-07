@@ -37,7 +37,37 @@ const HabitSchema = new Schema({
 	reward: {
 		type: String,
 		required: false
-	}
+	},
+	// Checkins - each checkin in the app pushes to this array
+	checkins: [
+		{
+			checkinDate: { 
+				type: Date, 
+				default: Date.now
+			},
+			// Effort - killed it, did good, tried, didn't even try
+			effort: {
+				type: String,
+				require: true
+
+			},
+			// Mood - I'm doing great, this is hard, why even bother?
+			mood: { 
+				type: String,
+				required: true
+			},
+			// Self evaulation - killed it, did good, tried, slept instead
+			selfEval: {
+				type: String,
+				required: false
+			},
+			// Notes - for later in-depth review
+			notes: {
+				type: String,
+				required: false
+			}
+		}
+	]
 });
 
 module.exports = Habit = mongoose.model('habit', HabitSchema)
