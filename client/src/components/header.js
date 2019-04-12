@@ -11,7 +11,7 @@ const Header = (props) => {
             <div className="user">
                 <p>Hello, <img src={UserIcon} alt="user icon" /></p>
 
-                <p>User Name</p>
+                <p>Sign-in / Sign-up</p>
             </div>
     </header>
     );
