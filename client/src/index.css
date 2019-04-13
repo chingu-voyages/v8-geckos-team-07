@@ -130,3 +130,64 @@ button {
 .btn--google:hover {
   background-color:#3367d6;
 }
+
+/* Form Styles */
+.newHabit {
+  text-align: center;
+  font-family: 'Life Savers', cursive;
+  color: #203f49;
+  border: solid 2px;
+  border-radius: 5%;
+  width: 50%;
+  margin: 30px auto;
+  background-color: white;
+}
+
+form {
+  display: grid;
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+
+.header {
+justify-self: center;
+text-underline-position: right;
+text-decoration: underline;
+}
+
+label {
+padding: 10px 0px 5px 0px;
+font-weight: 600;
+}
+
+input {
+height: 15px;
+background-color: #d4d4d6;
+border: none;
+padding: 10px;
+}
+
+select {
+background-color: #d4d4d6;
+height: 35px;
+}
+
+.submit {
+  width: 110px;
+  justify-self: end;
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 5%;
+  font-family: 'Life Savers', cursive;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.submit:hover {
+cursor: pointer;
+background-color: #fcbf74;
+}
+.error {
+  color: red;
+  font-weight: 600;
+}

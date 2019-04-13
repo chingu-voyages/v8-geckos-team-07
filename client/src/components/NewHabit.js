@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './newhabit.css'
 
 class NewHabit extends Component {
     state = {
