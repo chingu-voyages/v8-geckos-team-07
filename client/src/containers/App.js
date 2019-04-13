@@ -6,8 +6,6 @@ import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/newhabit/NewHabit';
 import CheckIn from '../components/check-in';
 
-import './App.css';
-
 class App extends Component {
   render() {
     return (
