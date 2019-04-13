@@ -39,14 +39,19 @@ class CheckIn extends Component {
         <div className="daily-check-in">
         <form onSubmit={this.handleSubmit}>
           <h2>Daily Check In</h2>
-          <p>Habit Tracking: *insert habit name here*</p>
+          <label htmlFor="habit">Habit Tracking:</label>
+            <select id="habit" name="habit" value={this.state.mood} onChange={this.onChange} >
+              <option name="habit" value="habit1">Habit 1</option>
+              <option name="habit" value="habit2">Habit 2</option>
+            </select>
+
+
+          {/*  Testing only - remove from production */ }
+          <label htmlFor="habit">Enter Habit ID (Tesing Only Field)</label> 
+          <input type="text" id="habit" name="habit" value={this.state.habit} onChange={this.onChange}   />
+          <br />
           
           <fieldset>
-            {/*  Testing only - remove from production */ }
-            <label htmlFor="habit">Enter Habit ID (Tesing Only Field)</label> <br />
-            <input type="text" id="habit" name="habit" 
-                value={this.state.habit} onChange={this.onChange}   />
-
           <legend>How did you do today?</legend>
             <input id="1" type="radio" name="effort" value="killed-it" onChange={this.onChange}/> 
             <label htmlFor="1">Killed it</label>            
@@ -74,10 +79,10 @@ class CheckIn extends Component {
               <option name="mood" value="sick">Sick</option>
             </select>
         
-            <label htmlFor="selfEval">What went well? or Why did you fail?</label><br />
+            <label htmlFor="selfEval">What went well? or Why did you fail?</label> 
             <textarea id="selfEval" name="selfEval" value={this.state.selfEval} onChange={this.onChange}></textarea>
 
-            <label htmlFor="notes">Personal Notes:</label><br />
+            <label htmlFor="notes">Personal Notes:</label>
             <textarea id="notes" name="notes" value={this.state.notes} onChange={this.onChange}></textarea>
 
             <button className="submit" type="submit">Submit</button>

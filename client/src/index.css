@@ -133,10 +133,9 @@ button {
 
 /* Form Styles */
 .newHabit, .daily-check-in {
-  font-family: 'Life Savers', cursive;
   color: #203f49;
   border: solid 2px;
-  border-radius: 5%;
+  border-radius: 20px;
   width: 50%;
   margin: 30px auto;
   background-color: white;
@@ -147,23 +146,41 @@ form {
   margin: auto;
   text-align: left;
 }
-label {
-padding: 10px 0px 5px 0px;
-font-weight: 600;
+form label:first-of-type {
+  margin-top: 0;
+}
+label, fieldset legend  {
+  margin: 20px 0px 5px 0px;
+  font-weight: 600;
+  font-family: 'Life Savers', cursive;
+}
+fieldset label {
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding: 0 20px 0 5px;
+}
+fieldset p {
+  font-size: 0.8em;
 }
 input, form button {
-height: 15px;
-background-color: #d4d4d6;
-border: none;
-padding: 10px;
+  height: 15px;
+  background-color: #d4d4d6;
+  border: none;
+  padding: 10px;
 }
 select {
-background-color: #d4d4d6;
-height: 35px;
+  background-color: #d4d4d6;
+  height: 35px;
 }
 textarea {
   background-color: #d4d4d6;
-  height: 100px;
+  height: 80px;
+}
+fieldset {
+  border:0;
+  margin: 0;
+  padding: 0;
 }
 .submit {
   width: 110px;
@@ -171,13 +188,13 @@ textarea {
   margin-top: 20px;
   height: 40px;
   border-radius: 5px;
-  font-family: 'Life Savers', cursive;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
 }
 .submit:hover {
-cursor: pointer;
-background-color: #fcbf74;
+  cursor: pointer;
+  background-color: #fcbf74;
 }
 .error {
   color: red;
