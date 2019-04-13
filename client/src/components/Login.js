@@ -28,7 +28,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout className="circle">
         <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
       </Layout>
     );

@@ -78,7 +78,7 @@ main {
 }
 
 /* Login page Circle */
-main {
+.circle {
     text-align: center;
     background-color:#fff;
     padding:4%;
@@ -91,7 +91,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
   }
-main h2::after {
+.circle h2::after {
     border-bottom: none;
 }
 button {
@@ -129,6 +129,18 @@ button {
 }
 .btn--google:hover {
   background-color:#3367d6;
+}
+
+/* Logout Button */
+.btn__logout {
+  width: 70px;
+  height: 33px;
+  font-size: 0.7rem;
+  background-color: rgb(172, 43, 43);
+}
+
+.btn__logout:hover {
+  background-color: rgb(197, 63, 63);
 }
 
 /* Form Styles */

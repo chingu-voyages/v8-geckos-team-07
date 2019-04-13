@@ -6,8 +6,6 @@ import SocialButtonList from './SocialButtonList';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 
-import './Dashboard.css';
-
 class Dashboard extends Component {
     static propTypes = {
         providerData: PropTypes.arrayOf(PropTypes.object).isRequired
