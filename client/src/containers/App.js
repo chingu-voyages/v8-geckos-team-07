@@ -5,6 +5,7 @@ import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/newhabit/NewHabit';
 import CheckIn from '../components/check-in';
+import NotFound from '../components/not-found';
 
 import './App.css';
 
@@ -19,6 +20,9 @@ class App extends Component {
           <Route path="/dashboard" component={withAuthentication(Dashboard)} />
           <Route path="/newhabit" component={NewHabit} />
           <Route path="/checkin" component={CheckIn} />
+          <Route path="*" component={NotFound} />
+
+
           <main>
             <h2>Test Heading Level 2</h2>
             <h3>This is a Heading Level 3</h3>
