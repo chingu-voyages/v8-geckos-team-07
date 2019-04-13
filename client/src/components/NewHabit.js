@@ -15,7 +15,7 @@ class NewHabit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if (this.state.habit.length > 0 && this.state.length.length > 0 && this.state.intervals.length > 0 && this.state.intervals != 'select'){
+        if (this.state.habit.length > 0 && this.state.length.length > 0 && this.state.intervals.length > 0 && this.state.intervals !== 'select'){
             this.setState({fieldsValid: true});    
             const { name, habit, smart, length, intervals, date } = this.state;
             axios.post('/api/habits/newhabit', { name, habit, smart, length, intervals, date })
