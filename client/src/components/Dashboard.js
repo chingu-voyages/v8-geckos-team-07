@@ -5,6 +5,7 @@ import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
+import NewHabit from './newhabit/NewHabit';
 
 import './Dashboard.css';
 
@@ -29,7 +30,8 @@ class Dashboard extends Component {
                 }
             }
         },
-        providerData: this.props.providerData
+        providerData: this.props.providerData,
+        newEntry: false,
     };
 
     componentDidMount() {
@@ -74,6 +76,13 @@ class Dashboard extends Component {
         }
     });
 
+    handleNewHabit = () => {
+        this.setState({newEntry: true})
+    }
+    handleNewHabitSubmit = () => {
+        this.setState({newEntry: false})
+    }
+
     render() {
         return (
             <Layout>
@@ -86,6 +95,8 @@ class Dashboard extends Component {
                 <p style={{ textAlign: 'center' }}>
                     <strong>Connect Other Social Accounts</strong>
                 </p>
+                <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
+                <button onClick={this.handleNewHabit}>Enter New Habit</button>
                 <SocialButtonList
                     buttonList={this.state.buttonList}
                     auth={auth.getAuth}

@@ -1,0 +1,27 @@
+.submission {
+	position: fixed;
+	top: 40%;
+	left: 30%;
+	background-color: #203f49;
+	border: 1px solid #203f49;
+	border-radius: 5%;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+.display-block {
+	display: block;
+}
+
+.display-none {
+	display: none;
+}
+
+.okbutton {
+	width: 50px;
+}
+
+.okbutton:hover {
+	cursor: pointer;
+}
