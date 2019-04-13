@@ -75,6 +75,10 @@ main {
     padding:4% 8%;
     max-width: 1200px;
     margin: 0 auto;
+    border: 2px solid #203f49;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin: 30px 10%;
 }
 
 /* Login page Circle */
