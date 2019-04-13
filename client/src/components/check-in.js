@@ -36,7 +36,8 @@ class CheckIn extends Component {
 
     render(){
       return (
-        <form className="daily-check-in" onSubmit={this.handleSubmit}>
+        <div className="daily-check-in">
+        <form onSubmit={this.handleSubmit}>
           <h2>Daily Check In</h2>
           <p>Habit Tracking: *insert habit name here*</p>
           
@@ -79,8 +80,9 @@ class CheckIn extends Component {
             <label htmlFor="notes">Personal Notes:</label><br />
             <textarea id="notes" name="notes" value={this.state.notes} onChange={this.onChange}></textarea>
 
-            <button type="submit">Submit</button>
+            <button className="submit" type="submit">Submit</button>
           </form>
+          </div>
       )};
 
 }

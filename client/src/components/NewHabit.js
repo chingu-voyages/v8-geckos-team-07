@@ -60,9 +60,7 @@ class NewHabit extends Component {
         return (
             <div className="newHabit">
                 <form onSubmit={this.handleSubmit}>
-                    <label className="header">
                     <h2>New Habit</h2>
-                    </label>
                     <label>
                         Habit:
                     </label>

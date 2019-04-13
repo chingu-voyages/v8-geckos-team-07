@@ -132,8 +132,7 @@ button {
 }
 
 /* Form Styles */
-.newHabit {
-  text-align: center;
+.newHabit, .daily-check-in {
   font-family: 'Life Savers', cursive;
   color: #203f49;
   border: solid 2px;
@@ -142,43 +141,36 @@ button {
   margin: 30px auto;
   background-color: white;
 }
-
 form {
   display: grid;
   width: 70%;
   margin: auto;
   text-align: left;
 }
-
-.header {
-justify-self: center;
-text-underline-position: right;
-text-decoration: underline;
-}
-
 label {
 padding: 10px 0px 5px 0px;
 font-weight: 600;
 }
-
-input {
+input, form button {
 height: 15px;
 background-color: #d4d4d6;
 border: none;
 padding: 10px;
 }
-
 select {
 background-color: #d4d4d6;
 height: 35px;
 }
-
+textarea {
+  background-color: #d4d4d6;
+  height: 100px;
+}
 .submit {
   width: 110px;
   justify-self: end;
   margin-top: 20px;
   height: 40px;
-  border-radius: 5%;
+  border-radius: 5px;
   font-family: 'Life Savers', cursive;
   font-weight: 600;
   margin-bottom: 20px;
