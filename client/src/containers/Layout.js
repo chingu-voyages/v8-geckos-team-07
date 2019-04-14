@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Header from '../components/header'
+import Header from '../components/header';
+import HeaderLoggedin from '../components/header-logged-in.js';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -15,7 +16,7 @@ const defaultProps = {
 const Layout = ({ children, contentCenter }) => {
   return (
     <section>
-      <Header />
+      <HeaderLoggedin />
       <main className={contentCenter ? 'content-center' : ''}>
       <h2>Start Tracking a Daily Habit</h2>
       {children}

@@ -74,27 +74,13 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <Layout>
-                <h1>User Logged In</h1>
+            <Layout {...this.state}>
+                <h2>Daily Dashboard</h2>
                 <SocialProfileList
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnliknedProvider}
                 />
-                <p style={{ textAlign: 'center' }}>
-                    <strong>Connect Other Social Accounts</strong>
-                </p>
-                <SocialButtonList
-                    buttonList={this.state.buttonList}
-                    auth={auth.getAuth}
-                    currentProviders={this.handleCurrentProviders}
-                />
-                <button
-                    className="btn__logout"
-                    onClick={() => auth.getAuth().signOut()}
-                >
-                    Logout
-        </button>
             </Layout>
         );
     }
