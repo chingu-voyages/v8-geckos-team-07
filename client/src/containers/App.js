@@ -7,6 +7,13 @@ import NewHabit from '../components/NewHabit';
 import CheckIn from '../components/check-in';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+        loggedIn: false
+      };
+  }    
+
   render() {
     return (
      
@@ -14,7 +21,7 @@ class App extends Component {
 
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/dashboard" component={withAuthentication(Dashboard)} />
+          <Route {...this.state} path="/dashboard" component={withAuthentication(Dashboard)} />
           <Route path="/newhabit" component={NewHabit} />
           <Route path="/checkin" component={CheckIn} />
           <main>
