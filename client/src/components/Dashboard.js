@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Layout from '../containers/Layout';
-import SocialButtonList from './SocialButtonList';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 
@@ -76,6 +75,7 @@ class Dashboard extends Component {
         return (
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
+                <p>Dashboard.js</p>
                 <SocialProfileList
                     auth={auth.getAuth}
                     providerData={this.state.providerData}

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import UserIcon from '../images/user-icon.svg'
 import PropTypes from 'prop-types';
-
-import Layout from '../containers/Layout';
+ 
 import SocialButtonList from './SocialButtonList';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 
+import UserIcon from '../images/user-icon.svg'
 
 class HeaderLoggedin extends Component {
     static propTypes = {
@@ -87,7 +86,8 @@ class HeaderLoggedin extends Component {
         
         <h1>Habit Tracker</h1>
         
-        <div className="user">
+        <div>
+            <p>Social profile list data not showing up...</p>
             <SocialProfileList
                 auth={auth.getAuth}
                 providerData={this.state.providerData}
@@ -101,9 +101,10 @@ class HeaderLoggedin extends Component {
                 auth={auth.getAuth}
                 currentProviders={this.handleCurrentProviders}
             />
-
-            <p>Hello, <img src={UserIcon} alt="user icon"/></p>
-            <p>User Name</p>
+            <div className="user">
+                <p>Hello, <img src={UserIcon} alt="user icon"/></p>
+                <p>User Name</p>
+            </div>
         </div>
     </header>
         );

@@ -28,7 +28,9 @@ class Login extends Component {
 
   render() {
     return (
-      <Layout className="circle">
+      <Layout className='circle'>
+        <h2>Start Tracking a Daily Habit</h2>
+        <p>Login.js</p>
         <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
       </Layout>
     );

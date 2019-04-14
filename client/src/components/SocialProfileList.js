@@ -10,9 +10,7 @@ class SocialProfileList extends PureComponent {
         unlinkedProvider: PropTypes.func.isRequired
     };
 
-    /**
-     * Unlinks a provider from the current user account
-     */
+    /* Unlinks a provider from the current user account */
     handleProviderUnlink = async (e, provider) => {
         const { auth, unlinkedProvider } = this.props;
 
@@ -39,9 +37,8 @@ class SocialProfileList extends PureComponent {
                 <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
-                >
-                    Unlink
-        </button>
+                >Unlink
+                </button>
             </div>
         );
     };

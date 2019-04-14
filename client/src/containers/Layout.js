@@ -16,9 +16,9 @@ const defaultProps = {
 const Layout = ({ children, contentCenter }) => {
   return (
     <section>
+      {/* <Header /> Need to swap headers based of if user logged in */}
       <HeaderLoggedin />
       <main className={contentCenter ? 'content-center' : ''}>
-      <h2>Start Tracking a Daily Habit</h2>
       {children}
       
       

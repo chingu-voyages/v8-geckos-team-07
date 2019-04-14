@@ -100,8 +100,8 @@ main {
 }
 button {
     /* removes default button styles for google sign in button */
-    border:none;
-    background-color:none;
+    border: none;
+    background-color: none;
 }
 
 /*Google Buttons for Log-in */
