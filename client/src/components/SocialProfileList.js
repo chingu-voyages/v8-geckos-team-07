@@ -49,9 +49,7 @@ class SocialProfileList extends PureComponent {
     render() {
         return (
             <Fragment>
-                <p className="text--center">
-                    <strong>Connected Social Accounts</strong>
-                </p>
+                
                 <div className="btn__profiles--list">
                     {this.props.providerData.map(this.renderProfileList)}
                 </div>
