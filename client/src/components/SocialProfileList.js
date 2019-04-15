@@ -1,8 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import './SocialProfileList.css';
-
 class SocialProfileList extends PureComponent {
     static propTypes = {
         auth: PropTypes.func.isRequired,

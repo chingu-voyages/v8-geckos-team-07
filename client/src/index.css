@@ -1,6 +1,7 @@
 /* Google Fonts */
 /* font-family: 'Life Savers', cursive; */
 @import url('https://fonts.googleapis.com/css?family=Life+Savers');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css');
 
 body {
     margin: 0;
@@ -215,3 +216,53 @@ fieldset {
   color: red;
   font-weight: 600;
 }
+
+.header-button-menu {
+  background: #72B0EC;
+  border-radius: 1000px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/* ------------------------------- copied from SocialProfileList.css   -------------------------------*/
+
+.btn__profiles--list {
+  
+  display: flex;
+  direction: rtl;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.container__profile {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  margin: 10px;
+}
+
+.container__profile--photo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.container__profile--btn {
+  font-size: 0.65rem;
+  width: 80px;
+  height: 28px;
+  background-color: transparent;
+  border: 1px solid red;
+  color: red;
+}
+
+.container__profile--btn:hover {
+  background-color: red;
+  color: white;
+}
+
+/* --------------------------------------------------------------------------------------------- */

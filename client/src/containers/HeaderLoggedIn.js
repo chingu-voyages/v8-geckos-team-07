@@ -7,18 +7,23 @@ const propTypes = {
     contentCenter: PropTypes.bool
 };
 
-const defaultProps = {
-    contentCenter: false
-};
+
 
 const HeaderLoggedIn = ({ children, contentCenter }) => {
     return (
         <section>
-            
+            <header className="headerLogin">
+                <i class="main-button-icon fa fa-bars fa-2x"></i>
+               
+                <h1>Habit Tracker</h1>
+                
+
+                {children}
+            </header>
 
 
            
-                {children}
+               
         
 
            
@@ -28,6 +33,6 @@ const HeaderLoggedIn = ({ children, contentCenter }) => {
 
 
 HeaderLoggedIn.propTypes = propTypes;
-HeaderLoggedIn.defaultProps = defaultProps;
+
 
 export default HeaderLoggedIn;
