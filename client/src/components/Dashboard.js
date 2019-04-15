@@ -49,7 +49,7 @@ class Dashboard extends Component {
         this.setState({ buttonList, providerData });
     };
 
-    handleUnliknedProvider = (providerName, providerData) => {
+    handleUnlinkedProvider = (providerName, providerData) => {
         if (providerData.length < 1) {
             auth
                 .getAuth()

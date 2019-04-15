@@ -13,7 +13,7 @@ const HeaderLoggedIn = ({ children, contentCenter }) => {
     return (
         <section>
             <header className="headerLogin">
-                <i class="main-button-icon fa fa-bars fa-2x"></i>
+                <i className="main-button-icon fa fa-bars fa-2x"></i>
                
                 <h1>Habit Tracker</h1>
                 
