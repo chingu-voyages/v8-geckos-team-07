@@ -33,12 +33,15 @@ class SocialProfileList extends PureComponent {
                     alt={providerName}
                     className="container__profile--photo"
                 />
-                
+
+               {/* ***UNLINK FUNCTION > needs to be moved to settings page *** 
                 <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
                 >Unlink
                 </button>
+                */}
+
             </div>
         );
     };
