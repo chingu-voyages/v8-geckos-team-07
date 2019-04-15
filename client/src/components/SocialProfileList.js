@@ -33,7 +33,7 @@ class SocialProfileList extends PureComponent {
                     alt={providerName}
                     className="container__profile--photo"
                 />
-                <p>{providerName}</p>
+                
                 <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
