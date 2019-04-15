@@ -75,24 +75,26 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-            <HeaderLoggedIn {...this.state}>
-                    <div id="header">
-                    <SocialProfileList
-                        auth={auth.getAuth}
-                        providerData={this.state.providerData}
-                        unlinkedProvider={this.handleUnliknedProvider}
-                    />
-                    </div>
+                <HeaderLoggedIn {...this.state}>
+                <div id="header">
+                <SocialProfileList
+                    auth={auth.getAuth}
+                    providerData={this.state.providerData}
+                    unlinkedProvider={this.handleUnlinkedProvider} />
+                <button
+                    className="btn__logout"
+                    onClick={() => auth.getAuth().signOut()}>
+                    Logout
+                </button>        
+            </div>
 
             </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
                 <p>Dashboard.js</p>
-                <SocialProfileList
-                    auth={auth.getAuth}
-                    providerData={this.state.providerData}
-                    unlinkedProvider={this.handleUnliknedProvider}
-                />
+                
+
+
             </Layout>
             </div>
         );
