@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Layout from '../containers/Layout';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
+import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 
 class Dashboard extends Component {
     static propTypes = {
@@ -73,6 +74,17 @@ class Dashboard extends Component {
 
     render() {
         return (
+            <div>
+            <HeaderLoggedIn {...this.state}>
+                    <div id="header">
+                    <SocialProfileList
+                        auth={auth.getAuth}
+                        providerData={this.state.providerData}
+                        unlinkedProvider={this.handleUnliknedProvider}
+                    />
+                    </div>
+
+            </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
                 <p>Dashboard.js</p>
@@ -82,6 +94,7 @@ class Dashboard extends Component {
                     unlinkedProvider={this.handleUnliknedProvider}
                 />
             </Layout>
+            </div>
         );
     }
 }
