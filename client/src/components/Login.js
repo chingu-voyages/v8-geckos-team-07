@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
@@ -29,7 +28,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout className="circle">
         <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
       </Layout>
     );
