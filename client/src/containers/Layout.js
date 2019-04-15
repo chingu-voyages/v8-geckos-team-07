@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/header'
 import HeaderLoggedin from '../components/header-logged-in'
+import Footer from '../components/footer'
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -18,25 +18,9 @@ const Layout = ({ children, contentCenter }) => {
       {/* <Header /> Need to swap headers based of if user logged in */}
       <HeaderLoggedin />
       <main className={contentCenter ? 'content-center' : ''}>
-      {children}
-      
-      
-       
+        {children}
       </main>
-      <footer>
-        
-          <div id="special_thanks">
-          <p>
-            Thank you {' '}
-            <span role="img" aria-label="heart emoji">
-              ❤️
-            </span>{' '}
-            <a href="https://blog.bitsrc.io/react-oauth-authentication-with-firebase-dfe0e8c5d0d4" target="_blank" rel="noopener noreferrer">Esau Silva</a>
-          </p> 
-          </div>
-          
-        
-      </footer>
+      <Footer />
     </section>
   );
 };
