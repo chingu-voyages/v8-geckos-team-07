@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import HabitSubmission from '../habitsubmission/HabitSubmission';
-
-import './newhabit.css'
+import HabitSubmission from './HabitSubmission';
 
 class NewHabit extends Component {
     state = {
@@ -25,7 +23,7 @@ class NewHabit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if (this.state.habit.length > 0 && this.state.length.length > 0 && this.state.intervals.length > 0 && this.state.intervals != 'select'){
+        if (this.state.habit.length > 0 && this.state.length.length > 0 && this.state.intervals.length > 0 && this.state.intervals !== 'select'){
             this.setState({fieldsValid: true});    
             const { name, habit, smart, length, intervals, date } = this.state;
             axios.post('/api/habits/newhabit', { name, habit, smart, length, intervals, date })
@@ -54,7 +52,13 @@ class NewHabit extends Component {
     }
 
     handleSubmitButton = () => {
-        this.setState({submit: true})
+        this.state.submit ? this.setState({submit: false}) : this.setState({submit: true})
+    }
+
+    handleOkClick = () => {
+        this.handleSubmitButton();
+        this.props.handleNewHabitSubmit();
+        this.setState({habit: '', smart: [], length: '', intervals: ''})
     }
 
     render(){
@@ -89,7 +93,7 @@ class NewHabit extends Component {
                     </label>
                         <input type='text' name='smart' placeholder="Please separate goals with commas" 
                         value={this.state.smart} onChange={this.onChange} />
-                    <HabitSubmission handleNewHabitSubmit={this.props.handleNewHabitSubmit} submit={this.state.submit} />
+                    <HabitSubmission handleOkClick={this.handleOkClick} submit={this.state.submit} />
                     <label>
                         Length of Time to Track:
                     </label>

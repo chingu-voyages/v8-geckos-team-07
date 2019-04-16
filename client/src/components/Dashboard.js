@@ -5,7 +5,7 @@ import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
-import NewHabit from './newhabit/NewHabit';
+import NewHabit from './NewHabit';
 
 import './Dashboard.css';
 

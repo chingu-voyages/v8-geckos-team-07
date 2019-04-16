@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
-import NewHabit from '../components/newhabit/NewHabit';
+import NewHabit from '../components/NewHabit';
 import CheckIn from '../components/check-in';
 
 import './App.css';
