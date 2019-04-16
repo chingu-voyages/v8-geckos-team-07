@@ -22,8 +22,7 @@ class App extends Component {
 
 
           <main>
-            <h2>404 Error</h2>
-            <p>App.js is the default page.</p>
+          
           </main >
         </Switch>
       </Router>
