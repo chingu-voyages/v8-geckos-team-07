@@ -212,6 +212,68 @@ fieldset {
   cursor: pointer;
   background-color: #fcbf74;
 }
+
+
+.submission {
+	position: fixed;
+	top: 40%;
+	left: 30%;
+	background-color: #203f49;
+	border: 1px solid #203f49;
+	border-radius: 5%;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+.subdisplay-block {
+	display: block;
+}
+
+.subdisplay-none {
+	display: none;
+}
+
+.okbutton {
+	width: 50px;
+}
+
+.okbutton:hover {
+	cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.display-block {
+    display: block;
+} 
+
+.display-none {
+    display: none;
+}
+
+.newHabit {
+    position: fixed;
+    text-align: center;
+    font-family: 'Life Savers', cursive;
+    color: #203f49;
+    border: solid 2px;
+    border-radius: 5%;
+    width: 50%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
 .error {
   color: red;
   font-weight: 600;

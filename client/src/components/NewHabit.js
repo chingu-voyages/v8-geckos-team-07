@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import HabitSubmission from './HabitSubmission';
+
 class NewHabit extends Component {
     state = {
-        name: 'test-user',
+        name: '',
+
         habit: '',
         smart: [],
         length: '',
@@ -11,6 +14,14 @@ class NewHabit extends Component {
         date: new Date(),
         lengthValid: true,
         fieldsValid: true,
+        submit: false,
+    }
+
+    componentDidMount() {
+        const user = this.props.data
+        this.setState({ name: user[0].email })
+        console.log(user[0].email)
+
     }
 
     handleSubmit = (event) => {
@@ -43,6 +54,18 @@ class NewHabit extends Component {
         }
     }
 
+
+    handleSubmitButton = () => {
+        this.state.submit ? this.setState({submit: false}) : this.setState({submit: true})
+    }
+
+    handleOkClick = () => {
+        this.handleSubmitButton();
+        this.props.handleNewHabitSubmit();
+        this.setState({habit: '', smart: [], length: '', intervals: ''})
+    }
+
+
     render(){
         let lenError = null
         if (this.state.lengthValid === false) {
@@ -57,10 +80,17 @@ class NewHabit extends Component {
             fieldErr = null
         }
 
+
+        const showModal = this.props.newEntry ? "modal display-block" : "modal display-none";
+
         return (
+            <div className={showModal}>
             <div className="newHabit">
                 <form onSubmit={this.handleSubmit}>
+                    <label className="header">
                     <h2>New Habit</h2>
+                    </label>
+
                     <label>
                         Habit:
                     </label>
@@ -70,6 +100,9 @@ class NewHabit extends Component {
                     </label>
                         <input type='text' name='smart' placeholder="Please separate goals with commas" 
                         value={this.state.smart} onChange={this.onChange} />
+
+                    <HabitSubmission handleOkClick={this.handleOkClick} submit={this.state.submit} />
+
                     <label>
                         Length of Time to Track:
                     </label>
@@ -87,9 +120,11 @@ class NewHabit extends Component {
                         </select>
                     { lenError }
                     { fieldErr }
-                    <input className="submit" type="submit" value="Start Tracking"/>                   
+                    <input className="submit" type="submit" value="Start Tracking" onClick={this.handleSubmitButton}/>                   
                 </form>
             </div>
+            </div>
+
         )
     }
 }

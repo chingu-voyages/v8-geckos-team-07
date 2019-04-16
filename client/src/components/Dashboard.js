@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import Layout from '../containers/Layout';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
+
 
 class Dashboard extends Component {
     static propTypes = {
@@ -27,7 +27,8 @@ class Dashboard extends Component {
                 }
             }
         },
-        providerData: this.props.providerData
+        providerData: this.props.providerData,
+        newEntry: false,
     };
 
     componentDidMount() {
@@ -71,6 +72,13 @@ class Dashboard extends Component {
             visible
         }
     });
+
+    handleNewHabit = () => {
+        this.setState({newEntry: true})
+    }
+    handleNewHabitSubmit = () => {
+        this.setState({newEntry: false})
+    }
 
     render() {
         return (
