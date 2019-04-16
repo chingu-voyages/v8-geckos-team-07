@@ -5,6 +5,7 @@ import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/NewHabit';
 import CheckIn from '../components/check-in';
+import NotFound from '../components/not-found';
 
 class App extends Component {
   constructor(props) {
@@ -24,9 +25,11 @@ class App extends Component {
           <Route {...this.state} path="/dashboard" component={withAuthentication(Dashboard)} />
           <Route path="/newhabit" component={NewHabit} />
           <Route path="/checkin" component={CheckIn} />
+          <Route path="*" component={NotFound} />
+
+
           <main>
-            <h2>404 Error</h2>
-            <p>App.js is the default page.</p>
+          
           </main >
         </Switch>
       </Router>
