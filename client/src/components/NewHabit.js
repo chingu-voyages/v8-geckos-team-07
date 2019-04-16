@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 import HabitSubmission from './HabitSubmission';
 
 class NewHabit extends Component {
     state = {
         name: '',
+
         habit: '',
         smart: [],
         length: '',
@@ -19,6 +21,7 @@ class NewHabit extends Component {
         const user = this.props.data
         this.setState({ name: user[0].email })
         console.log(user[0].email)
+
     }
 
     handleSubmit = (event) => {
@@ -51,6 +54,7 @@ class NewHabit extends Component {
         }
     }
 
+
     handleSubmitButton = () => {
         this.state.submit ? this.setState({submit: false}) : this.setState({submit: true})
     }
@@ -60,6 +64,7 @@ class NewHabit extends Component {
         this.props.handleNewHabitSubmit();
         this.setState({habit: '', smart: [], length: '', intervals: ''})
     }
+
 
     render(){
         let lenError = null
@@ -75,6 +80,7 @@ class NewHabit extends Component {
             fieldErr = null
         }
 
+
         const showModal = this.props.newEntry ? "modal display-block" : "modal display-none";
 
         return (
@@ -84,6 +90,7 @@ class NewHabit extends Component {
                     <label className="header">
                     <h2>New Habit</h2>
                     </label>
+
                     <label>
                         Habit:
                     </label>
@@ -93,7 +100,9 @@ class NewHabit extends Component {
                     </label>
                         <input type='text' name='smart' placeholder="Please separate goals with commas" 
                         value={this.state.smart} onChange={this.onChange} />
+
                     <HabitSubmission handleOkClick={this.handleOkClick} submit={this.state.submit} />
+
                     <label>
                         Length of Time to Track:
                     </label>
@@ -115,6 +124,7 @@ class NewHabit extends Component {
                 </form>
             </div>
             </div>
+
         )
     }
 }
