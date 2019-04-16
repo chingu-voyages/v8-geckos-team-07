@@ -17,10 +17,11 @@ const Layout = ({ children, contentCenter }) => {
     <section>
       {/* <Header /> Need to swap headers based of if user logged in */}
       
-      
-      <main className={contentCenter ? 'content-center' : ''}>
-        {children}
-      </main>
+      <div id="content-wrap">
+        <main className={contentCenter ? 'content-center' : ''}>
+          {children}
+        </main>
+      </div>
       
       <Footer />
     </section>
