@@ -4,6 +4,7 @@ import Layout from '../containers/Layout';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
+import NewHabit from './NewHabit';
 
 
 class Dashboard extends Component {
@@ -89,6 +90,11 @@ class Dashboard extends Component {
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnlinkedProvider} />
+                
+                <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
+                <button onClick={this.handleNewHabit} >Enter New Habit</button>
+                
+                
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
