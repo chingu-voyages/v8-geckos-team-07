@@ -5,7 +5,7 @@ import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/NewHabit';
 import CheckIn from '../components/check-in';
-import NotFound from '../components/not-found';
+import NotFound from '../components/NotFound';
 
 class App extends Component {
   constructor(props) {
@@ -26,11 +26,6 @@ class App extends Component {
           <Route path="/newhabit" component={NewHabit} />
           <Route path="/checkin" component={CheckIn} />
           <Route path="*" component={NotFound} />
-
-
-          <main>
-          
-          </main >
         </Switch>
       </Router>
 
