@@ -6,7 +6,6 @@ import HabitSubmission from './HabitSubmission';
 class NewHabit extends Component {
     state = {
         name: '',
-
         habit: '',
         smart: [],
         length: '',
@@ -21,7 +20,6 @@ class NewHabit extends Component {
         const user = this.props.data
         this.setState({ name: user[0].email })
         console.log(user[0].email)
-
     }
 
     handleSubmit = (event) => {
@@ -53,8 +51,6 @@ class NewHabit extends Component {
             this.setState({ lengthValid: false })
         }
     }
-
-
     handleSubmitButton = () => {
         this.state.submit ? this.setState({submit: false}) : this.setState({submit: true})
     }
@@ -65,6 +61,10 @@ class NewHabit extends Component {
         this.setState({habit: '', smart: [], length: '', intervals: ''})
     }
 
+    handleExitClick = () => {
+        this.props.handleNewHabitSubmit();
+        this.setState({habit: '', smart: [], length: '', intervals: ''})
+    }
 
     render(){
         let lenError = null
@@ -90,7 +90,6 @@ class NewHabit extends Component {
                     <label className="header">
                     <h2>New Habit</h2>
                     </label>
-
                     <label>
                         Habit:
                     </label>
@@ -120,7 +119,10 @@ class NewHabit extends Component {
                         </select>
                     { lenError }
                     { fieldErr }
-                    <input className="submit" type="submit" value="Start Tracking" onClick={this.handleSubmitButton}/>                   
+                    <div className="buttons">
+                        <button className="button" onClick={this.handleExitClick}>Exit</button>
+                        <input className="button" type="submit" value="Start Tracking" onClick={this.handleSubmitButton}/>
+                    </div>                   
                 </form>
             </div>
             </div>

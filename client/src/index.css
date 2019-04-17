@@ -211,9 +211,13 @@ fieldset {
   margin: 0;
   padding: 0;
 }
-.submit {
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
   width: 110px;
-  justify-self: end;
   margin-top: 20px;
   height: 40px;
   border-radius: 5px;
@@ -221,7 +225,7 @@ fieldset {
   font-weight: 600;
   margin-bottom: 20px;
 }
-.submit:hover {
+.button:hover {
   cursor: pointer;
   background-color: #fcbf74;
 }
