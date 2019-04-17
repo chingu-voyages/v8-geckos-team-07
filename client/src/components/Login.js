@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
 import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
 import { auth } from '../firebase';
+import Header from '../components/header';
 
 const buttonList = {
   google: {
@@ -28,9 +28,12 @@ class Login extends Component {
 
   render() {
     return (
-      <Layout className="circle">
-        <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
-      </Layout>
+      <div>
+        <Header />
+        <Layout className="circle">  
+          <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
+        </Layout>
+      </div>
     );
   }
 }

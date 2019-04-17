@@ -1,8 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import './SocialProfileList.css';
-
 class SocialProfileList extends PureComponent {
     static propTypes = {
         auth: PropTypes.func.isRequired,
@@ -10,9 +8,7 @@ class SocialProfileList extends PureComponent {
         unlinkedProvider: PropTypes.func.isRequired
     };
 
-    /**
-     * Unlinks a provider from the current user account
-     */
+    /* Unlinks a provider from the current user account */
     handleProviderUnlink = async (e, provider) => {
         const { auth, unlinkedProvider } = this.props;
 
@@ -35,13 +31,16 @@ class SocialProfileList extends PureComponent {
                     alt={providerName}
                     className="container__profile--photo"
                 />
-                <p>{providerName}</p>
+
+               
                 <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
-                >
-                    Unlink
-        </button>
+                >Unlink
+                </button>
+                
+                
+
             </div>
         );
     };
@@ -49,9 +48,7 @@ class SocialProfileList extends PureComponent {
     render() {
         return (
             <Fragment>
-                <p className="text--center">
-                    <strong>Connected Social Accounts</strong>
-                </p>
+                
                 <div className="btn__profiles--list">
                     {this.props.providerData.map(this.renderProfileList)}
                 </div>
