@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import Layout from '../containers/Layout';
-import SocialButtonList from './SocialButtonList';
 import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
+import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
+
 
 class Dashboard extends Component {
     static propTypes = {
@@ -51,7 +51,7 @@ class Dashboard extends Component {
         this.setState({ buttonList, providerData });
     };
 
-    handleUnliknedProvider = (providerName, providerData) => {
+    handleUnlinkedProvider = (providerName, providerData) => {
         if (providerData.length < 1) {
             auth
                 .getAuth()
@@ -83,30 +83,34 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <Layout>
-                <h1>User Logged In</h1>
+            <div>
+                <HeaderLoggedIn {...this.state}>
+                <div id="header">
                 <SocialProfileList
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
-                    unlinkedProvider={this.handleUnliknedProvider}
-                />
-                <p style={{ textAlign: 'center' }}>
-                    <strong>Connect Other Social Accounts</strong>
-                </p>
+                    unlinkedProvider={this.handleUnlinkedProvider} />
+                
                 <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
-                <button onClick={this.handleNewHabit}>Enter New Habit</button>
-                <SocialButtonList
-                    buttonList={this.state.buttonList}
-                    auth={auth.getAuth}
-                    currentProviders={this.handleCurrentProviders}
-                />
+                <button onClick={this.handleNewHabit} >Enter New Habit</button>
+                
+                
                 <button
                     className="btn__logout"
-                    onClick={() => auth.getAuth().signOut()}
-                >
+                    onClick={() => auth.getAuth().signOut()}>
                     Logout
-        </button>
+                </button>        
+            </div>
+
+            </HeaderLoggedIn>
+            <Layout {...this.state}>
+                <h2>Daily Dashboard</h2>
+                <p>Dashboard.js</p>
+                
+
+
             </Layout>
+            </div>
         );
     }
 }

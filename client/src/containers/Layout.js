@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Header from '../components/header'
+import Footer from '../components/footer'
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -15,28 +15,15 @@ const defaultProps = {
 const Layout = ({ children, contentCenter }) => {
   return (
     <section>
-      <Header />
-      <main className={contentCenter ? 'content-center' : ''}>
-      <h2>Start Tracking a Daily Habit</h2>
-      {children}
+      {/* <Header /> Need to swap headers based of if user logged in */}
       
+      <div id="content-wrap">
+        <main className={contentCenter ? 'content-center' : ''}>
+          {children}
+        </main>
+      </div>
       
-       
-      </main>
-      <footer>
-        
-          <div id="special_thanks">
-          <p>
-            Thank you {' '}
-            <span role="img" aria-label="heart emoji">
-              ❤️
-            </span>{' '}
-            <a href="https://blog.bitsrc.io/react-oauth-authentication-with-firebase-dfe0e8c5d0d4" target="_blank" rel="noopener noreferrer">Esau Silva</a>
-          </p> 
-          </div>
-          
-        
-      </footer>
+      <Footer />
     </section>
   );
 };
