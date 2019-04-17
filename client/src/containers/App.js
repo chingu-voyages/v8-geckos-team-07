@@ -5,8 +5,16 @@ import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
 import NewHabit from '../components/NewHabit';
 import CheckIn from '../components/check-in';
+import NotFound from '../components/NotFound';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+        loggedIn: false
+      };
+  }    
+
   render() {
     return (
      
@@ -14,13 +22,10 @@ class App extends Component {
 
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/dashboard" component={withAuthentication(Dashboard)} />
+          <Route {...this.state} path="/dashboard" component={withAuthentication(Dashboard)} />
           <Route path="/newhabit" component={NewHabit} />
           <Route path="/checkin" component={CheckIn} />
-          <main>
-            <h2>404 Error</h2>
-            <p>App.js is the default page.</p>
-          </main >
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
 
