@@ -5,6 +5,7 @@ import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
+import axios from 'axios';
 
 
 class Dashboard extends Component {
@@ -30,10 +31,20 @@ class Dashboard extends Component {
         },
         providerData: this.props.providerData,
         newEntry: false,
+        habitData: [],
+        user: '',
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.updateProviders(this.state.providerData);
+        const user = this.state.providerData
+        // let data = '';
+        this.setState({ user: user[0].email })
+        axios.get('/api/habits/habit/5cb0191dcca50e00d2e290be')
+            .then(res => 
+                this.setState({ habitData: res.data }))
+            .catch(error => 
+                console.log(error))
     }
 
     handleCurrentProviders = providerData => {
