@@ -38,7 +38,6 @@ class Dashboard extends Component {
     componentDidMount = () => {
         this.updateProviders(this.state.providerData);
         const user = this.state.providerData
-        // let data = '';
         this.setState({ user: user[0].email })
         axios.get('/api/habits/habit/5cb0191dcca50e00d2e290be')
             .then(res => 
