@@ -37,12 +37,25 @@ router.post('/checkin', (req, res) => {
 });
 
 
-//@route 	GET api/items
+//@route 	GET api/habit
 //@desc 	Get all habits
 //@access	Public
-router.get('/', (req, res) => {
-	Habit.find()
-		.then(habits => res.json(habits))
+router.get('/habit/:id', (req, res) => {
+	const id = req.params.id
+
+	Habit.findById(id)
+		.then(habits => {
+			res.json({
+				confirmation: 'success',
+				data: habits
+			})
+		})
+		.catch(err => {
+			res.json({
+				confirmation: 'fail',
+				mesage: 'Profile ' + id + ' not found.'
+			})
+		})
 });
 
 module.exports = router;

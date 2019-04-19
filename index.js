@@ -16,7 +16,7 @@ require('dotenv').config()
 const db = process.env.MONGO_URI
 
 //Connect to Mongo
-mongoose.connect(db)
+mongoose.connect(db, { useNewUrlParser: true })
 	.then(() => console.log('DB connected...'))
 	.catch(err => console.log(err));
 
