@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
+import ReactTooltip from 'react-tooltip';
 
 class Progress extends Component {
     
@@ -27,6 +28,7 @@ class Progress extends Component {
                       
                     </div>
                 </div>
+                <ReactTooltip />
             </div>
         )
     
