@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
     children: PropTypes.node.isRequired,
-    contentCenter: PropTypes.bool
-}; 
+    contentCenter: PropTypes.bool,
+};
 
 const HeaderLoggedIn = ({ children, contentCenter }) => {
     return (
         <section>
             <header className="headerLogin">
-                <aside>
                     <button
                             onClick={propTypes.hamburgerToggle}
                             onKeyPress={propTypes.hamburgerToggle}
@@ -22,14 +21,13 @@ const HeaderLoggedIn = ({ children, contentCenter }) => {
                         <i className="main-button-icon fa fa-bars fa-2x"></i>
                     </button>
 
-                    <nav id="sidebar" className={propTypes.sidebarToggle ? "open" : null }>
+                    <nav id="sidebar" className={propTypes.hamburgerToggle ? "open" : null }>
                         <ul>
                             <li>About</li>
                             <li>Resources</li>
                             <li>Unlink</li>
                         </ul>
                     </nav>
-                </aside>
                
                 <h1>Habit Tracker</h1>
 
