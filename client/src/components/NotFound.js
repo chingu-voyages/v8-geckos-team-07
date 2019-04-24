@@ -11,7 +11,8 @@ const NotFound = () => (
             <h2>Sorry, page not found...</h2>
             <img src={Gecko} style={{ display: 'block', margin: 'auto', position: 'relative', height: '250px', transform: 'rotate(65deg)'  }} alt={"404 not found page"} />
             <img src={Gecko} style={{ display: 'block', margin: 'auto', position: 'relative', height: '250px' }} alt={"404 not found page"} />
-            <center><Link to="/">Return to Home Page</Link></center>
+            <br />
+            <p><center><Link to="/">Return to Home Page</Link></center></p> 
         </main>
     </div>
 );
