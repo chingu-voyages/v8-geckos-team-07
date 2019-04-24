@@ -7,6 +7,7 @@ import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
 import CurrentHabit from './CurrentHabit';
 import axios from 'axios';
+import Progress from './Progress';
 
 
 class Dashboard extends Component {
@@ -117,7 +118,7 @@ class Dashboard extends Component {
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
                 <p>Dashboard.js</p>
-                
+                < Progress />
 
             <CurrentHabit {...this.state.habitData} />
             </Layout>
