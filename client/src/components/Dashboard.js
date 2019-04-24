@@ -119,7 +119,7 @@ class Dashboard extends Component {
                 <p>Dashboard.js</p>
                 
 
-
+            <CurrentHabit {...this.state.habitData} />
             </Layout>
             </div>
         );
