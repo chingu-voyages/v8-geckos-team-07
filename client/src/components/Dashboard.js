@@ -33,6 +33,7 @@ class Dashboard extends Component {
         newEntry: false,
         habitData: [],
         user: '',
+        hamburgerOpen: false
     };
 
     componentDidMount = () => {
@@ -90,6 +91,13 @@ class Dashboard extends Component {
     handleNewHabitSubmit = () => {
         this.setState({newEntry: false})
     }
+
+    //toggle visability of sidebar with Button
+    hamburgerToggle = () => {
+        this.setState((prevState) => {
+            return {hamburgerOpen: !prevState.hamburgerOpen};
+        });
+    }  
 
     render() {
         return (
