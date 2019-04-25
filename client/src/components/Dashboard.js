@@ -92,10 +92,17 @@ class Dashboard extends Component {
         this.setState({newEntry: false})
     }
 
+    //toggle visability of sidebar with Button
+    hamburgerToggle = () => {
+        this.setState((prevState) => ({
+            hamburgerOpen: !prevState.hamburgerOpen
+        }));
+    }  
+
     render() {
         return (
             <div>
-                <HeaderLoggedIn {...this.state}>
+                <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle} >
                 <div id="header">
                 <SocialProfileList
                     auth={auth.getAuth}
