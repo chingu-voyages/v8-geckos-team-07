@@ -37,23 +37,24 @@ router.post('/checkin', (req, res) => {
 });
 
 
-//@route 	GET api/habit
-//@desc 	Get all habits
-//@access	Public
-router.get('/habit/:id', (req, res) => {
-	const id = req.params.id
+// Get first habit for a given user
+//@route	 GET api/first-habit
+//@desc 	 Get the first habit that exists for the given user
+//@access    Public
+router.get('/first-habit/:user', (req, res) => {
+	const user = req.params.user
 
-	Habit.findById(id)
-		.then(habits => {
+	Habit.findOne({name: user})
+		.then(habit => {
 			res.json({
 				confirmation: 'success',
-				data: habits
+				data: habit
 			})
 		})
 		.catch(err => {
 			res.json({
 				confirmation: 'fail',
-				mesage: 'Profile ' + id + ' not found.'
+				message: 'No habits found for user'
 			})
 		})
 });

@@ -43,9 +43,13 @@ class Dashboard extends Component {
         this.setState({ user: user[0].email })
         axios.get('/api/habits/first-habit/' + user[0].email)
             .then(res => 
-                this.setState({ habitData: res.data.data }))
-            .catch(error => 
-                console.log(error))
+                this.setState({ habitData: res.data.data }, () => {
+                    this.state.habitData ? this.setState({newEntry: false}) : this.setState({newEntry: true})
+                })
+            )
+            .catch(error =>
+                console.log(error)
+            )
     }
 
     handleCurrentProviders = providerData => {
@@ -94,6 +98,7 @@ class Dashboard extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <HeaderLoggedIn {...this.state}>
@@ -102,11 +107,8 @@ class Dashboard extends Component {
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnlinkedProvider} />
-                
                 <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
-                <button onClick={this.handleNewHabit} >Enter New Habit</button>
-                
-                
+                <button onClick={this.handleNewHabit} >Create New Habit</button>
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
@@ -118,9 +120,9 @@ class Dashboard extends Component {
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
                 <p>Dashboard.js</p>
-                < Progress />
+                <Progress />
+                <CurrentHabit {...this.state.habitData} />
 
-            <CurrentHabit {...this.state.habitData} />
             </Layout>
             </div>
         );
