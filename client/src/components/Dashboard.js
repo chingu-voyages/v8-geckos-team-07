@@ -115,8 +115,6 @@ class Dashboard extends Component {
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnlinkedProvider} />
                 <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
-
-                <button onClick={this.handleNewHabit} >Enter New Habit</button>
                 
                 <button onClick={this.handleNewHabit} >Create New Habit</button>
           
