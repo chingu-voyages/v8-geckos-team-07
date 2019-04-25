@@ -7,7 +7,6 @@ import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
 import axios from 'axios';
 
-
 class Dashboard extends Component {
     static propTypes = {
         providerData: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -112,7 +111,6 @@ class Dashboard extends Component {
                 <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
                 <button onClick={this.handleNewHabit} >Enter New Habit</button>
                 
-                
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
@@ -123,10 +121,7 @@ class Dashboard extends Component {
             </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
-                <p>Dashboard.js</p>
                 
-
-
             </Layout>
             </div>
         );
