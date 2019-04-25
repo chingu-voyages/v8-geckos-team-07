@@ -9,7 +9,6 @@ import CurrentHabit from './CurrentHabit';
 import axios from 'axios';
 import Progress from './Progress';
 
-
 class Dashboard extends Component {
     static propTypes = {
         providerData: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -35,6 +34,7 @@ class Dashboard extends Component {
         newEntry: false,
         habitData: [],
         user: '',
+        hamburgerOpen: false
     };
 
     componentDidMount = () => {
@@ -97,18 +97,29 @@ class Dashboard extends Component {
         this.setState({newEntry: false})
     }
 
+    //toggle visability of sidebar with Button
+    hamburgerToggle = () => {
+        this.setState((prevState) => ({
+            hamburgerOpen: !prevState.hamburgerOpen
+        }));
+    }  
+
     render() {
 
         return (
             <div>
-                <HeaderLoggedIn {...this.state}>
+                <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle} >
                 <div id="header">
                 <SocialProfileList
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnlinkedProvider} />
                 <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
+
+                <button onClick={this.handleNewHabit} >Enter New Habit</button>
+                
                 <button onClick={this.handleNewHabit} >Create New Habit</button>
+          
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
@@ -119,10 +130,8 @@ class Dashboard extends Component {
             </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
-                <p>Dashboard.js</p>
                 <Progress />
                 <CurrentHabit {...this.state.habitData} />
-
             </Layout>
             </div>
         );

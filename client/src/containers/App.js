@@ -8,18 +8,11 @@ import CheckIn from '../components/check-in';
 import NotFound from '../components/NotFound';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-      this.state = {
-        loggedIn: false
-      };
-  }    
 
   render() {
     return (
      
       <Router>
-
         <Switch>
           <Route path="/" exact component={Login} />
           <Route {...this.state} path="/dashboard" component={withAuthentication(Dashboard)} />
@@ -27,7 +20,6 @@ class App extends Component {
           <Route path="*" component={NotFound} />
         </Switch>
       </Router>
-
       
     );
   }

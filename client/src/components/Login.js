@@ -14,7 +14,6 @@ const buttonList = {
       return provider;
     }
   },
-  
 };
 
 class Login extends Component {

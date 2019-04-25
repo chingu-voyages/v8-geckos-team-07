@@ -18,6 +18,7 @@ body {
 header {
     background-color: #203f49;
     width: 94%;
+    max-height: 150px;
     padding: 15px 3% 10px 3%;
     color: #ffffff;
 }
@@ -93,6 +94,37 @@ main {
     margin: 30px 10%;
 }
 
+/* Hamburger Menu and Off Canvas sidebar */
+#sidebar {
+  max-width: 30%;
+  width: 200px;
+  padding: 30px;
+  margin: 0;
+  border: 2px solid #203f49;
+  background-color: #ffffff;
+  color:#000;
+  height: calc(100vh - 175px);
+  position: absolute;
+    top: 173px; /*height of header */
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transform: translate(-120%, 0);
+  transform: translate(-120%, 0);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(5px 4px 4px rgba(33, 33, 33, 0.3) );
+}
+#sidebar.open {
+  -webkit-transform: translate(-15%, 0);
+  transform: translate(-15%,0);
+}
+#hamburger-menu {
+  background-color: #203f49;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+}
+
+
 /* Login page Circle */
 .circle {
     text-align: center;
@@ -112,10 +144,8 @@ main {
 }
 button {
     /* removes default button styles for google sign in button */
-
     border:none;
     background-color:none;
-
 }
 
 /*Google Buttons for Log-in */
