@@ -17,14 +17,14 @@ const HeaderLoggedIn = ({ children, contentCenter, hamburgerToggle, hamburgerOpe
                         aria-haspopup="true"
                         aria-expanded={"false"} 
                         id="hamburger-menu" >
-                    <i className="main-button-icon fa fa-bars fa-2x"></i>
+                    <i className="main-button-icon fa fa-bars fa-3x"></i>
                     </button>
 
                     <nav id="sidebar" className={hamburgerOpen ? "open" : null }>
                         <ul>
+                            <li>User Settings</li>
                             <li>About</li>
                             <li>Resources</li>
-                            <li>Unlink</li>
                         </ul>
                     </nav>
                
