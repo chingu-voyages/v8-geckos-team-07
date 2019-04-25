@@ -92,13 +92,6 @@ class Dashboard extends Component {
         this.setState({newEntry: false})
     }
 
-    //toggle visability of sidebar with Button
-    hamburgerToggle = () => {
-        this.setState((prevState) => {
-            return {hamburgerOpen: !prevState.hamburgerOpen};
-        });
-    }  
-
     render() {
         return (
             <div>

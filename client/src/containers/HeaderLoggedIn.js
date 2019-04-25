@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import Hamburger from '../components/Hamburger.js'
 
 const propTypes = {
     children: PropTypes.node.isRequired,
@@ -12,13 +13,13 @@ const HeaderLoggedIn = ({ children, contentCenter }) => {
         <section>
             <header className="headerLogin">
                     <button
-                            onClick={propTypes.hamburgerToggle}
-                            onKeyPress={propTypes.hamburgerToggle}
-                            aria-haspopup="true"
-                            aria-expanded={"false"} 
-                            id="hamburger-menu"
-                            className={propTypes.hamburgerOpen ? "open" : null }>
-                        <i className="main-button-icon fa fa-bars fa-2x"></i>
+                        onClick={propTypes.hamburgerToggle}
+                        onKeyPress={propTypes.hamburgerToggle}
+                        aria-haspopup="true"
+                        aria-expanded={"false"} 
+                        id="hamburger-menu"
+                        className={propTypes.hamburgerToggle ? "open" : null } >
+                    <i className="main-button-icon fa fa-bars fa-2x"></i>
                     </button>
 
                     <nav id="sidebar" className={propTypes.hamburgerToggle ? "open" : null }>
