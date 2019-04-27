@@ -33,10 +33,12 @@ class Dashboard extends Component {
         },
         providerData: this.props.providerData,
         newEntry: false,
+        newEntryButton: true,
         habitData: [],
         user: '',
         hamburgerOpen: false,
-        checkIn: false
+        checkIn: false,
+        habitExist: false,
     };
 
     componentDidMount = () => {
@@ -46,7 +48,8 @@ class Dashboard extends Component {
         axios.get('/api/habits/first-habit/' + user[0].email)
             .then(res => 
                 this.setState({ habitData: res.data.data }, () => {
-                    this.state.habitData ? this.setState({newEntry: false}) : this.setState({newEntry: true})
+                    this.state.habitData ? this.setState({newEntry: false, newEntryButton: false, 
+                        habitExist: true}) : this.setState({newEntry: true, newEntryButton: true, habitExist: false})
                 })
             )
             .catch(error =>
@@ -120,6 +123,26 @@ class Dashboard extends Component {
 
     render() {
 
+        let newHabitButton = null;
+        if (this.state.newEntryButton){
+            newHabitButton = <button className='habitButton' onClick={this.handleNewHabit} >Create New Habit</button>
+        } else {
+            newHabitButton = null
+        }
+
+        let checkInComp = null;
+        let checkInButton = null;
+        if (this.state.habitExist){
+            checkInComp = <CheckIn checkIn={this.state.checkIn} 
+                    habitId={this.state.habitData._id}
+                    handleCheckIn={this.handleCheckIn} 
+                    handleCheckInSubmit={this.handleCheckInSubmit} />;
+            checkInButton = <button className='habitButton' onClick={this.handleCheckIn}>Check In</button>
+        } else {
+            checkInComp = null;
+            checkInButton = null;
+        }
+
         return (
             <div>
                 <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle} >
@@ -131,10 +154,7 @@ class Dashboard extends Component {
                 <NewHabit data={this.state.providerData} 
                     handleNewHabitSubmit={this.handleNewHabitSubmit} 
                     newEntry={this.state.newEntry} />
-                <CheckIn checkIn={this.state.checkIn} 
-                    habitId={this.state.habitData._id}
-                    handleCheckIn={this.handleCheckIn} 
-                    handleCheckInSubmit={this.handleCheckInSubmit} />
+                {checkInComp}
 
                 <button
                     className="btn__logout"
@@ -146,8 +166,8 @@ class Dashboard extends Component {
             </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
-                <button className='habitButton' onClick={this.handleNewHabit} >Create New Habit</button>
-                <button className='habitButton' onClick={this.handleCheckIn}>Check In</button>
+                {newHabitButton}
+                {checkInButton}
                 <Progress />
                 <CurrentHabit {...this.state.habitData} />
             </Layout>
