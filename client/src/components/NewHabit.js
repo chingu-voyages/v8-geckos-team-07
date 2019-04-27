@@ -14,6 +14,7 @@ class NewHabit extends Component {
         lengthValid: true,
         fieldsValid: true,
         submit: false,
+        habitData: [],
     }
 
     componentDidMount() {
@@ -29,7 +30,8 @@ class NewHabit extends Component {
             const { name, habit, smart, length, intervals, date } = this.state;
             axios.post('/api/habits/newhabit', { name, habit, smart, length, intervals, date })
                 .then((result) => {
-                  console.log(result.data);  
+                  console.log(result.data);
+                  this.setState({habitData: result.data})  
                 })
                 .catch((error) => {
                     console.log(error);
@@ -56,8 +58,9 @@ class NewHabit extends Component {
     }
 
     handleOkClick = () => {
+        // this.props.handleNewHabitData();
         this.handleSubmitButton();
-        this.props.handleNewHabitSubmit();
+        this.props.handleNewHabitSubmit(this.state.habitData);
         this.setState({habit: '', smart: [], length: '', intervals: ''})
     }
 

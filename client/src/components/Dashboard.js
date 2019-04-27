@@ -99,8 +99,8 @@ class Dashboard extends Component {
     handleNewHabit = () => {
         this.setState({newEntry: true})
     }
-    handleNewHabitSubmit = () => {
-        this.setState({newEntry: false})
+    handleNewHabitSubmit = (data) => {
+        this.setState({newEntry: false, habitExist: true, newEntryButton: false, habitData: data});
     }
 
     handleCheckInSubmit = () => {
