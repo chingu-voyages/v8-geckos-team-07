@@ -215,10 +215,13 @@ fieldset label {
   font-size: 1em;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  padding: 0 20px 0 5px;
+  vertical-align: middle;
 }
 fieldset p {
   font-size: 0.8em;
+}
+fieldset input {
+  vertical-align: middle;
 }
 input, form button {
   height: 15px;
@@ -232,12 +235,13 @@ select {
 }
 textarea {
   background-color: #d4d4d6;
-  height: 80px;
+  height: 50px;
 }
 fieldset {
   border:0;
   margin: 0;
   padding: 0;
+  font-size: .8rem;
 }
 
 .buttons {
@@ -269,6 +273,7 @@ fieldset {
 	color: white;
 	padding: 20px;
 	text-align: center;
+  font-size: .8rem;
 }
 
 .subdisplay-block {
@@ -281,6 +286,7 @@ fieldset {
 
 .okbutton {
 	width: 50px;
+  height: 40px;
 }
 
 .okbutton:hover {
@@ -322,6 +328,8 @@ fieldset {
 .error {
   color: red;
   font-weight: 600;
+  font-size: .8rem;
+  margin: 0;
 }
 
 .header-button-menu {
@@ -380,4 +388,18 @@ fieldset {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.habitButton {
+  padding: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-family: 'Life Savers', cursive;
+  background-color: #203f49;
+  color: #ffffff;
+}
+.habitButton:hover {
+  cursor: pointer;
+  box-shadow: 1px 3px #888888;
+  font-weight: 600;
 }

@@ -5,6 +5,7 @@ import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
+import CheckIn from './check-in';
 import CurrentHabit from './CurrentHabit';
 import axios from 'axios';
 import Progress from './Progress';
@@ -32,9 +33,12 @@ class Dashboard extends Component {
         },
         providerData: this.props.providerData,
         newEntry: false,
+        newEntryButton: true,
         habitData: [],
         user: '',
-        hamburgerOpen: false
+        hamburgerOpen: false,
+        checkIn: false,
+        habitExist: false,
     };
 
     componentDidMount = () => {
@@ -44,12 +48,14 @@ class Dashboard extends Component {
         axios.get('/api/habits/first-habit/' + user[0].email)
             .then(res => 
                 this.setState({ habitData: res.data.data }, () => {
-                    this.state.habitData ? this.setState({newEntry: false}) : this.setState({newEntry: true})
+                    this.state.habitData ? this.setState({newEntry: false, newEntryButton: false, 
+                        habitExist: true}) : this.setState({newEntry: true, newEntryButton: true, habitExist: false})
                 })
             )
             .catch(error =>
                 console.log(error)
             )
+
     }
 
     handleCurrentProviders = providerData => {
@@ -93,8 +99,12 @@ class Dashboard extends Component {
     handleNewHabit = () => {
         this.setState({newEntry: true})
     }
-    handleNewHabitSubmit = () => {
-        this.setState({newEntry: false})
+    handleNewHabitSubmit = (data) => {
+        this.setState({newEntry: false, habitExist: true, newEntryButton: false, habitData: data});
+    }
+
+    handleCheckInSubmit = () => {
+        this.setState({checkIn: false})
     }
 
     //toggle visability of sidebar with Button
@@ -102,9 +112,36 @@ class Dashboard extends Component {
         this.setState((prevState) => ({
             hamburgerOpen: !prevState.hamburgerOpen
         }));
-    }  
+    }
+
+    //open check in form
+    handleCheckIn = () => {
+        this.setState((prevState) => ({
+            checkIn: !prevState.checkIn
+        }))
+    }
 
     render() {
+
+        let newHabitButton = null;
+        if (this.state.newEntryButton){
+            newHabitButton = <button className='habitButton' onClick={this.handleNewHabit} >Create New Habit</button>
+        } else {
+            newHabitButton = null
+        }
+
+        let checkInComp = null;
+        let checkInButton = null;
+        if (this.state.habitExist){
+            checkInComp = <CheckIn checkIn={this.state.checkIn} 
+                    habitId={this.state.habitData._id}
+                    handleCheckIn={this.handleCheckIn} 
+                    handleCheckInSubmit={this.handleCheckInSubmit} />;
+            checkInButton = <button className='habitButton' onClick={this.handleCheckIn}>Check In</button>
+        } else {
+            checkInComp = null;
+            checkInButton = null;
+        }
 
         return (
             <div>
@@ -114,10 +151,11 @@ class Dashboard extends Component {
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnlinkedProvider} />
-                <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
-                
-                <button onClick={this.handleNewHabit} >Create New Habit</button>
-          
+                <NewHabit data={this.state.providerData} 
+                    handleNewHabitSubmit={this.handleNewHabitSubmit} 
+                    newEntry={this.state.newEntry} />
+                {checkInComp}
+
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
@@ -128,6 +166,8 @@ class Dashboard extends Component {
             </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
+                {newHabitButton}
+                {checkInButton}
                 <Progress />
                 <CurrentHabit {...this.state.habitData} />
             </Layout>
