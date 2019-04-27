@@ -18,6 +18,7 @@ body {
 header {
     background-color: #203f49;
     width: 94%;
+    max-height: 150px;
     padding: 15px 3% 10px 3%;
     color: #ffffff;
 }
@@ -28,9 +29,7 @@ header {
 
 #footer {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;            /* Footer height */
+  padding: 1rem;          /* Footer height */
 }
 
 
@@ -95,6 +94,37 @@ main {
     margin: 30px 10%;
 }
 
+/* Hamburger Menu and Off Canvas sidebar */
+#sidebar {
+  max-width: 30%;
+  width: 200px;
+  padding: 30px;
+  margin: 0;
+  border: 2px solid #203f49;
+  background-color: #ffffff;
+  color:#000;
+  height: calc(100vh - 175px);
+  position: absolute;
+    top: 173px; /*height of header */
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transform: translate(-120%, 0);
+  transform: translate(-120%, 0);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(5px 4px 4px rgba(33, 33, 33, 0.3) );
+}
+#sidebar.open {
+  -webkit-transform: translate(-15%, 0);
+  transform: translate(-15%,0);
+}
+#hamburger-menu {
+  background-color: #203f49;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+}
+
+
 /* Login page Circle */
 .circle {
     text-align: center;
@@ -114,10 +144,8 @@ main {
 }
 button {
     /* removes default button styles for google sign in button */
-
     border:none;
     background-color:none;
-
 }
 
 /*Google Buttons for Log-in */
@@ -187,10 +215,13 @@ fieldset label {
   font-size: 1em;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  padding: 0 20px 0 5px;
+  vertical-align: middle;
 }
 fieldset p {
   font-size: 0.8em;
+}
+fieldset input {
+  vertical-align: middle;
 }
 input, form button {
   height: 15px;
@@ -204,12 +235,13 @@ select {
 }
 textarea {
   background-color: #d4d4d6;
-  height: 80px;
+  height: 50px;
 }
 fieldset {
   border:0;
   margin: 0;
   padding: 0;
+  font-size: .8rem;
 }
 
 .buttons {
@@ -241,6 +273,7 @@ fieldset {
 	color: white;
 	padding: 20px;
 	text-align: center;
+  font-size: .8rem;
 }
 
 .subdisplay-block {
@@ -253,6 +286,7 @@ fieldset {
 
 .okbutton {
 	width: 50px;
+  height: 40px;
 }
 
 .okbutton:hover {
@@ -294,6 +328,8 @@ fieldset {
 .error {
   color: red;
   font-weight: 600;
+  font-size: .8rem;
+  margin: 0;
 }
 
 .header-button-menu {
@@ -345,3 +381,25 @@ fieldset {
 }
 
 /* --------------------------------------------------------------------------------------------- */
+
+.widget {
+    border-width: thin;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.habitButton {
+  padding: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-family: 'Life Savers', cursive;
+  background-color: #203f49;
+  color: #ffffff;
+}
+.habitButton:hover {
+  cursor: pointer;
+  box-shadow: 1px 3px #888888;
+  font-weight: 600;
+}

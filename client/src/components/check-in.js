@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
+import CheckInSubmission from './CheckInSubmission';
 import axios from 'axios'
 
 class CheckIn extends Component {
     state = {
-      habit: '',
       effort: '',
       mood: '',
       selfEval: '',
       notes: '',
       fieldsValid: true,
-      date: new Date()
+      date: new Date(),
+      submit: false,
     }
 
     handleSubmit = (event) => {
       event.preventDefault();
-      if (this.state.habit.length > 0 && this.state.effort.length > 0 && this.state.mood.length > 0){
+      if (this.state.effort.length > 0 && this.state.mood !== ''){
           this.setState({fieldsValid: true});    
-          const { habit, effort, mood, selfEval, notes } = this.state;
+          const { effort, mood, selfEval, notes } = this.state;
+          const habit = this.props.habitId
           axios.post('/api/habits/checkin', { habit, effort, mood, selfEval, notes })
               .then((result) => {
                 console.log(result.data);  
@@ -34,22 +36,53 @@ class CheckIn extends Component {
       this.setState({ [e.target.name]: e.target.value});
     }
 
+    handleSubmitButton = () => {
+      this.setState((prevState) => ({
+            submit: !prevState.submit
+        }))
+    }
+
+    handleOkClick = () => {
+        this.handleSubmitButton();
+        this.props.handleCheckInSubmit();
+        this.setState({effort: '', mood: '', selfEval: '', notes: ''})
+    }
+
+    onClose = (e) => {
+      e.preventDefault();
+      this.props.handleCheckIn();
+      this.setState({ effort: '', mood: '', selfEval: '', notes: ''})
+    }
+
     render(){
+
+        let fieldErr = null
+        if (this.state.fieldsValid === false) {
+            fieldErr = <p className="error">Please enter required fields</p>
+        } else {
+            fieldErr = null
+        }
+
+
+      const showModal = this.props.checkIn ? "modal display-block" : "modal display-none";
+
       return (
+        <div className={showModal}>
         <div className="daily-check-in">
         <form onSubmit={this.handleSubmit}>
           <h2>Daily Check In</h2>
-          <label htmlFor="habit">Habit Tracking:</label>
-            <select id="habit" name="habit" value={this.state.mood} onChange={this.onChange} >
-              <option name="habit" value="habit1">Habit 1</option>
-              <option name="habit" value="habit2">Habit 2</option>
-            </select>
+          {/* add this in when multiple habits are allowed --
+            <label htmlFor="habit">Habit Tracking:</label>
+             <select id="habit" name="habit" value={this.state.mood} onChange={this.onChange} >
+               <option name="habit" value="habit1">Habit 1</option>
+               <option name="habit" value="habit2">Habit 2</option>
+             </select> */}
 
 
-          {/*  Testing only - remove from production */ }
+          {/*  Testing only - remove from production
           <label htmlFor="habit">Enter Habit ID (Tesing Only Field)</label> 
           <input type="text" id="habit" name="habit" value={this.state.habit} onChange={this.onChange}   />
-          <br />
+          <br /> */}
           
           <fieldset>
           <legend>How did you do today?</legend>
@@ -68,6 +101,7 @@ class CheckIn extends Component {
               
             <label htmlFor="mood">What was your mood today?</label>
             <select id="mood" name="mood" value={this.state.mood} onChange={this.onChange} >
+              <option name="mood" value=''>Please Select One</option>
               <option name="mood" value="productive">Productive/ Energetic</option>
               <option name="mood" value="happy">Happy/ Joyful</option>
               <option name="mood" value="average">Average</option>
@@ -78,15 +112,21 @@ class CheckIn extends Component {
               <option name="mood" value="tired">Tired</option>
               <option name="mood" value="sick">Sick</option>
             </select>
+
+            <CheckInSubmission handleOkClick={this.handleOkClick} submit={this.state.submit} />
         
             <label htmlFor="selfEval">What went well? or Why did you fail?</label> 
             <textarea id="selfEval" name="selfEval" value={this.state.selfEval} onChange={this.onChange}></textarea>
 
             <label htmlFor="notes">Personal Notes:</label>
             <textarea id="notes" name="notes" value={this.state.notes} onChange={this.onChange}></textarea>
-
-            <button className="submit" type="submit">Submit</button>
+            {fieldErr}
+            <div className="buttons">
+            <input className="button" type="submit" value="Submit" onClick={this.handleSubmitButton} />
+            <button className="button" onClick={this.onClose}>Close</button>
+            </div>
           </form>
+          </div>
           </div>
       )};
 

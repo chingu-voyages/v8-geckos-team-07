@@ -5,8 +5,10 @@ import SocialProfileList from './SocialProfileList';
 import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
+import CheckIn from './check-in';
+import CurrentHabit from './CurrentHabit';
 import axios from 'axios';
-
+import Progress from './Progress';
 
 class Dashboard extends Component {
     static propTypes = {
@@ -33,6 +35,8 @@ class Dashboard extends Component {
         newEntry: false,
         habitData: [],
         user: '',
+        hamburgerOpen: false,
+        checkIn: false
     };
 
     componentDidMount = () => {
@@ -96,18 +100,42 @@ class Dashboard extends Component {
         this.setState({newEntry: false})
     }
 
+    handleCheckInSubmit = () => {
+        this.setState({checkIn: false})
+    }
+
+    //toggle visability of sidebar with Button
+    hamburgerToggle = () => {
+        this.setState((prevState) => ({
+            hamburgerOpen: !prevState.hamburgerOpen
+        }));
+    }
+
+    //open check in form
+    handleCheckIn = () => {
+        this.setState((prevState) => ({
+            checkIn: !prevState.checkIn
+        }))
+    }
+
     render() {
 
         return (
             <div>
-                <HeaderLoggedIn {...this.state}>
+                <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle} >
                 <div id="header">
                 <SocialProfileList
                     auth={auth.getAuth}
                     providerData={this.state.providerData}
                     unlinkedProvider={this.handleUnlinkedProvider} />
-                <NewHabit data={this.state.providerData} handleNewHabitSubmit={this.handleNewHabitSubmit} newEntry={this.state.newEntry} />
-                <button onClick={this.handleNewHabit} >Create New Habit</button>
+                <NewHabit data={this.state.providerData} 
+                    handleNewHabitSubmit={this.handleNewHabitSubmit} 
+                    newEntry={this.state.newEntry} />
+                <CheckIn checkIn={this.state.checkIn} 
+                    habitId={this.state.habitData._id}
+                    handleCheckIn={this.handleCheckIn} 
+                    handleCheckInSubmit={this.handleCheckInSubmit} />
+
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
@@ -118,7 +146,10 @@ class Dashboard extends Component {
             </HeaderLoggedIn>
             <Layout {...this.state}>
                 <h2>Daily Dashboard</h2>
-                <p>Dashboard.js</p>
+                <button className='habitButton' onClick={this.handleNewHabit} >Create New Habit</button>
+                <button className='habitButton' onClick={this.handleCheckIn}>Check In</button>
+                <Progress />
+                <CurrentHabit {...this.state.habitData} />
             </Layout>
             </div>
         );

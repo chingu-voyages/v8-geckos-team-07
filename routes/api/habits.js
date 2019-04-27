@@ -36,6 +36,28 @@ router.post('/checkin', (req, res) => {
 		.then(habit => res.json(habit));
 });
 
+// Delete a habit by id
+//@route	 DELETE api/habit
+//@desc 	 Delete a given habit
+//@access 	 Public
+router.delete('/habit/:id', (req, res) => {
+	const id = req.params.id
+
+	Habit.findByIdAndDelete(id)
+		.then(habit => {
+			res.json({
+				confimration: 'success',
+				data: habit
+			})
+		})
+		.catch(err => {
+			res.json({
+				confimration: 'fail',
+				message: 'Habit not found!'
+			})
+		})
+
+});
 
 // Get first habit for a given user
 //@route	 GET api/first-habit
@@ -43,7 +65,7 @@ router.post('/checkin', (req, res) => {
 //@access    Public
 router.get('/first-habit/:user', (req, res) => {
 	const user = req.params.user
-
+	
 	Habit.findOne({name: user})
 		.then(habit => {
 			res.json({
@@ -57,6 +79,8 @@ router.get('/first-habit/:user', (req, res) => {
 				message: 'No habits found for user'
 			})
 		})
+
 });
+
 
 module.exports = router;
