@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { auth } from '../firebase';
+
 import Layout from '../containers/Layout';
 import SocialProfileList from './SocialProfileList';
-import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
 import CheckIn from './check-in';
 import CurrentHabit from './CurrentHabit';
-import axios from 'axios';
 import Progress from './Progress';
 
 class Dashboard extends Component {
