@@ -29,9 +29,11 @@ class Login extends Component {
     return (
       <div>
         <Header />
-        <Layout className="circle">  
+        <div className="circle">
+          <h2>Text?</h2>
+          <p>paragraph text?</p>
           <SocialButtonList buttonList={buttonList} auth={auth.getAuth}/>
-        </Layout>
+        </div>
       </div>
     );
   }
