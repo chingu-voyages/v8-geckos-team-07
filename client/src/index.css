@@ -24,14 +24,8 @@ header {
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
+  padding-bottom: 2.5rem;
 }
-
-#footer {
-  position: absolute;
-  padding: 1rem;          /* Footer height */
-}
-
 
 header h1 {
     text-align: center;
@@ -93,6 +87,16 @@ main {
     background-color: #ffffff;
     margin: 30px 10%;
 }
+footer {
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+button {
+  /* removes default button styles */
+  border: none;
+  background-color: none;
+}
 
 /* Hamburger Menu and Off Canvas sidebar */
 #sidebar {
@@ -132,8 +136,8 @@ main {
     padding:10%;
     margin:2% auto;
     border-radius: 50%;
-      width: 250px;
-      height: 250px;
+      width: 275px;
+      height: 275px;
     border: 2px solid #203f49;
     display: flex;
     flex-direction: column;
@@ -142,11 +146,10 @@ main {
 .circle h2::after {
     border-bottom: none;
 }
-button {
-    /* removes default button styles for google sign in button */
-    border:none;
-    background-color:none;
+.circle ol {
+  text-align: left;
 }
+
 
 /*Google Buttons for Log-in */
 @import url('https://fonts.googleapis.com/css?family=Roboto:500');
