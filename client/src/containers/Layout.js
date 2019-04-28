@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Footer from '../components/footer'
+import HeaderLoggedIn from './HeaderLoggedIn';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -11,7 +12,7 @@ const propTypes = {
 const Layout = ({ children}) => {
   return (
     <section>
-      {/* <Header /> Need to swap headers based of if user logged in */}
+      {/* <Header /> or <HeaderLoggedIn /> Need to swap headers based of if user logged in */}
       
       <div id="content-wrap">
         <main>

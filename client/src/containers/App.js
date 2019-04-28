@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
+import UserSettings from '../components/UserSettings';
 import NotFound from '../components/NotFound';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Login} />
           <Route {...this.state} path="/dashboard" component={withAuthentication(Dashboard)} />
+          <Route path="/UserSettings" exact component={UserSettings} />
           <Route path="*" component={NotFound} />
         </Switch>
       </Router>
