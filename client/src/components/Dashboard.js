@@ -160,6 +160,7 @@ class Dashboard extends Component {
                 <button
                     className="btn__logout"
                     onClick={() => auth.getAuth().signOut()}>
+                    <i class="far fa-window-close"></i>&nbsp;
                     Logout
                 </button>        
             </div>
