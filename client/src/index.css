@@ -45,10 +45,18 @@ header h1 {
     text-align: left;
     font-size: 2.3em;
 }
-.headerLogin .user img {
+.headerLogin .user img, .container__profile--photo {
     width: 25px;
     height: 20px;
     padding: 2%;
+    display: block;
+}
+
+#userDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 /* Font Styles */
@@ -360,24 +368,24 @@ fieldset {
 /* ------------------------------- copied from SocialProfileList.css   -------------------------------*/
 
 .btn__profiles--list {
-  
   display: flex;
-  direction: rtl;
-  flex-wrap: wrap;
-  justify-content: right;
+  direction: column;
+  justify-content: center;
+  border:1px solid red;
 }
 
-.container__profile {
+/* .container__profile {
   display: flex;
   flex-direction: row;
   align-items: right;
   margin: 10px;
-}
+} */
 
 .container__profile--photo {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+  margin:10px auto;
 }
 
 .container__profile--btn {
@@ -385,8 +393,6 @@ fieldset {
   width: 80px;
   height: 28px;
   background-color: transparent;
-  border: 1px solid red;
-  color: red;
 }
 
 .container__profile--btn:hover {

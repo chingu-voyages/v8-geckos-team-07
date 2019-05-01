@@ -30,14 +30,15 @@ class SocialProfileList extends PureComponent {
                     src={photoURL}
                     alt={providerName}
                     className="container__profile--photo"
-                />
+                /> 
+                <p>Hello {this.props.providerData[0].displayName}</p>
 
                
-                <button
+                {/* <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
                 >Unlink
-                </button>
+                </button> */}
                 
                 
 
