@@ -33,14 +33,13 @@ class SocialProfileList extends PureComponent {
                 /> 
                 <p>Hello {this.props.providerData[0].displayName}</p>
 
-               
-                {/* <button
+                {/* Unlink button want to move to hamburger menu > User Settings component/page
+                
+                <button
                     className="container__profile--btn"
                     onClick={e => this.handleProviderUnlink(e, providerName)}
                 >Unlink
                 </button> */}
-                
-                
 
             </div>
         );

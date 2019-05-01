@@ -21,7 +21,7 @@ const HeaderLoggedIn = ({ children, hamburgerToggle, hamburgerOpen }) => {
                     </button>
 
                     <nav id="sidebar" className={hamburgerOpen ? "open" : null }>
-                            <Link to="/UserSettings"><h3>User Settings</h3></Link>
+                            <Link to="/UserSettings" ><h3>User Settings</h3></Link>
                             <h3>About</h3>
                             <h3>Resources</h3>
                                 <ul>

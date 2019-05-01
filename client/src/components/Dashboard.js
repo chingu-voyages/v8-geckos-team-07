@@ -146,7 +146,13 @@ class Dashboard extends Component {
 
         return (
             <div>
-                <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle} >
+                <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle}
+                
+                
+                auth={auth.getAuth}
+                providerData={this.state.providerData}
+                unlinkedProvider={this.handleUnlinkedProvider} 
+                >
                 <div id="userDisplay">
                 <SocialProfileList
                     auth={auth.getAuth}
