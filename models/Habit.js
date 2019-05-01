@@ -42,8 +42,8 @@ const HabitSchema = new Schema({
 	checkins: [
 		{
 			checkinDate: { 
-				type: Date, 
-				default: Date.now
+				type: String, 
+				required: true
 			},
 			// Effort - killed it, did good, tried, didn't even try
 			effort: {

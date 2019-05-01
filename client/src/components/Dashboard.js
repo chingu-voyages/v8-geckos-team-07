@@ -9,6 +9,7 @@ import CheckIn from './check-in';
 import CurrentHabit from './CurrentHabit';
 import axios from 'axios';
 import Progress from './Progress';
+import moment from 'moment';
 
 class Dashboard extends Component {
     static propTypes = {
@@ -39,7 +40,19 @@ class Dashboard extends Component {
         hamburgerOpen: false,
         checkIn: false,
         habitExist: false,
+        checkIns: [],
+        checkInButton: true,
     };
+
+
+    dateCheck = () => {
+        let dates = [];
+        this.state.checkIns.forEach(date => dates.push(date.checkinDate));
+        const date = Date();
+        if(dates.includes(moment(new Date(date)).format("MMMM Do YYYY"))) {
+            this.setState({checkInButton: false}) 
+        }
+    }
 
     componentDidMount = () => {
         this.updateProviders(this.state.providerData);
@@ -47,7 +60,8 @@ class Dashboard extends Component {
         this.setState({ user: user[0].email })
         axios.get('/api/habits/first-habit/' + user[0].email)
             .then(res => 
-                this.setState({ habitData: res.data.data }, () => {
+                this.setState({ habitData: res.data.data, checkIns: res.data.data.checkins }, () => {
+                    this.dateCheck()
                     this.state.habitData ? this.setState({newEntry: false, newEntryButton: false, 
                         habitExist: true}) : this.setState({newEntry: true, newEntryButton: true, habitExist: false})
                 })
@@ -57,6 +71,7 @@ class Dashboard extends Component {
             )
 
     }
+
 
     handleCurrentProviders = providerData => {
         this.updateProviders(providerData);
@@ -97,14 +112,18 @@ class Dashboard extends Component {
     });
 
     handleNewHabit = () => {
-        this.setState({newEntry: true})
+        this.setState((prevState) => ({
+            newEntry: !prevState.newEntry
+        }));
     }
     handleNewHabitSubmit = (data) => {
         this.setState({newEntry: false, habitExist: true, newEntryButton: false, habitData: data});
     }
 
-    handleCheckInSubmit = () => {
-        this.setState({checkIn: false})
+    handleCheckInSubmit = (data) => {
+        this.setState({checkIn: false, checkIns: data}, () => {
+            this.dateCheck();
+        });
     }
 
     //toggle visability of sidebar with Button
@@ -132,7 +151,10 @@ class Dashboard extends Component {
 
         let checkInComp = null;
         let checkInButton = null;
-        if (this.state.habitExist){
+
+        if (this.state.checkInButton === false){
+            checkInButton = null
+        } else if (this.state.habitExist){
             checkInComp = <CheckIn checkIn={this.state.checkIn} 
                     habitId={this.state.habitData._id}
                     handleCheckIn={this.handleCheckIn} 
@@ -153,7 +175,8 @@ class Dashboard extends Component {
                     unlinkedProvider={this.handleUnlinkedProvider} />
                 <NewHabit data={this.state.providerData} 
                     handleNewHabitSubmit={this.handleNewHabitSubmit} 
-                    newEntry={this.state.newEntry} />
+                    newEntry={this.state.newEntry}
+                    handleNewHabit={this.handleNewHabit} />
                 {checkInComp}
 
                 <button
