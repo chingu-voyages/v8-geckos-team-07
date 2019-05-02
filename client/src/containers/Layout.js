@@ -2,23 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Footer from '../components/footer'
+import HeaderLoggedIn from './HeaderLoggedIn';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
   contentCenter: PropTypes.bool
 };
 
-const defaultProps = {
-  contentCenter: false
-};
-
-const Layout = ({ children, contentCenter }) => {
+const Layout = ({ children}) => {
   return (
     <section>
-      {/* <Header /> Need to swap headers based of if user logged in */}
+      {/* <Header /> or <HeaderLoggedIn /> Need to swap headers based of if user logged in */}
       
       <div id="content-wrap">
-        <main className={contentCenter ? 'content-center' : ''}>
+        <main>
           {children}
         </main>
       </div>
@@ -29,6 +26,5 @@ const Layout = ({ children, contentCenter }) => {
 };
 
 Layout.propTypes = propTypes;
-Layout.defaultProps = defaultProps;
 
 export default Layout;

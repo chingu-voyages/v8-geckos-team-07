@@ -10,6 +10,7 @@ class CheckIn extends Component {
       selfEval: '',
       notes: '',
       fieldsValid: true,
+
       date: Date(),
       submit: false,
       checkinData: [],
@@ -26,6 +27,7 @@ class CheckIn extends Component {
           const { effort, mood, selfEval, notes, date } = this.state;
           const habit = this.props.habitId
           axios.post('/api/habits/checkin', { habit, effort, mood, selfEval, notes, date })
+
               .then((result) => {
                 console.log(result.data);
                 this.setState({checkinData: result.data.checkins})    
@@ -51,7 +53,9 @@ class CheckIn extends Component {
 
     handleOkClick = () => {
         this.handleSubmitButton();
+      
         this.props.handleCheckInSubmit(this.state.checkinData);
+
         this.setState({effort: '', mood: '', selfEval: '', notes: ''})
     }
 

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { auth } from '../firebase';
+
 import Layout from '../containers/Layout';
 import SocialProfileList from './SocialProfileList';
-import { auth } from '../firebase';
 import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
 import CheckIn from './check-in';
 import CurrentHabit from './CurrentHabit';
-import axios from 'axios';
 import Progress from './Progress';
 import moment from 'moment';
 
@@ -40,8 +41,10 @@ class Dashboard extends Component {
         hamburgerOpen: false,
         checkIn: false,
         habitExist: false,
+
         checkIns: [],
         checkInButton: true,
+
     };
 
 
@@ -60,8 +63,10 @@ class Dashboard extends Component {
         this.setState({ user: user[0].email })
         axios.get('/api/habits/first-habit/' + user[0].email)
             .then(res => 
+
                 this.setState({ habitData: res.data.data, checkIns: res.data.data.checkins }, () => {
                     this.dateCheck()
+
                     this.state.habitData ? this.setState({newEntry: false, newEntryButton: false, 
                         habitExist: true}) : this.setState({newEntry: true, newEntryButton: true, habitExist: false})
                 })
@@ -120,6 +125,7 @@ class Dashboard extends Component {
         this.setState({newEntry: false, habitExist: true, newEntryButton: false, habitData: data});
     }
 
+
     handleCheckInSubmit = (data) => {
         this.setState({checkIn: false, checkIns: data}, () => {
             this.dateCheck();
@@ -152,9 +158,11 @@ class Dashboard extends Component {
         let checkInComp = null;
         let checkInButton = null;
 
+
         if (this.state.checkInButton === false){
             checkInButton = null
         } else if (this.state.habitExist){
+          
             checkInComp = <CheckIn checkIn={this.state.checkIn} 
                     habitId={this.state.habitData._id}
                     handleCheckIn={this.handleCheckIn} 

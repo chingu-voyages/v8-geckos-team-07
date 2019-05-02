@@ -1,13 +1,13 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 
 const propTypes = {
     children: PropTypes.node.isRequired,
-    contentCenter: PropTypes.bool,
 };
 
-const HeaderLoggedIn = ({ children, contentCenter, hamburgerToggle, hamburgerOpen }) => {
+const HeaderLoggedIn = ({ children, hamburgerToggle, hamburgerOpen }) => {
     return (
         <section>
             <header className="headerLogin">
@@ -21,11 +21,12 @@ const HeaderLoggedIn = ({ children, contentCenter, hamburgerToggle, hamburgerOpe
                     </button>
 
                     <nav id="sidebar" className={hamburgerOpen ? "open" : null }>
-                        <ul>
-                            <li>User Settings</li>
-                            <li>About</li>
-                            <li>Resources</li>
-                        </ul>
+                            <Link to="/UserSettings"><h3>User Settings</h3></Link>
+                            <h3>About</h3>
+                            <h3>Resources</h3>
+                                <ul>
+                                    <li><a href="https://blog.bitsrc.io/react-oauth-authentication-with-firebase-dfe0e8c5d0d4" target="_blank" rel="noopener noreferrer">Esau Silva</a></li>
+                                </ul>
                     </nav>
                
                 <h1>Habit Tracker</h1>
