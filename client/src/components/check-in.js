@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CheckInSubmission from './CheckInSubmission';
 import axios from 'axios'
+import moment from 'moment';
 
 class CheckIn extends Component {
     state = {
@@ -9,19 +10,27 @@ class CheckIn extends Component {
       selfEval: '',
       notes: '',
       fieldsValid: true,
-      date: new Date(),
+
+      date: Date(),
       submit: false,
+      checkinData: [],
+    }
+
+    componentDidMount () {
+      this.setState({ date: moment(new Date(this.state.date)).format("MMMM Do YYYY")  })
     }
 
     handleSubmit = (event) => {
       event.preventDefault();
       if (this.state.effort.length > 0 && this.state.mood !== ''){
           this.setState({fieldsValid: true});    
-          const { effort, mood, selfEval, notes } = this.state;
+          const { effort, mood, selfEval, notes, date } = this.state;
           const habit = this.props.habitId
-          axios.post('/api/habits/checkin', { habit, effort, mood, selfEval, notes })
+          axios.post('/api/habits/checkin', { habit, effort, mood, selfEval, notes, date })
+
               .then((result) => {
-                console.log(result.data);  
+                console.log(result.data);
+                this.setState({checkinData: result.data.checkins})    
               })
               .catch((error) => {
                   console.log(error);
@@ -44,7 +53,9 @@ class CheckIn extends Component {
 
     handleOkClick = () => {
         this.handleSubmitButton();
-        this.props.handleCheckInSubmit();
+      
+        this.props.handleCheckInSubmit(this.state.checkinData);
+
         this.setState({effort: '', mood: '', selfEval: '', notes: ''})
     }
 
