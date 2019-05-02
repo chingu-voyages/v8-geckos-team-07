@@ -24,15 +24,15 @@ router.post('/newhabit', (req, res) => {
 //@access	Public
 router.post('/checkin', (req, res) => {
 	const checkin = {
-		// Date will be autofilled
-		effort: req.body.mood,
+		effort: req.body.effort,
 		mood: req.body.mood,
 		selfEval: req.body.selfEval,
-		notes: req.body.notes
+		notes: req.body.notes,
+		checkinDate: req.body.date
 	}
 	// Just to get this off the ground - request should include habit id
 	// Probably better use combination of user id + habit name
-	Habit.findOneAndUpdate({_id: req.body.habit}, {$push: {checkins: checkin}})
+	Habit.findOneAndUpdate({_id: req.body.habit}, {$push: {checkins: checkin}},{new: true})
 		.then(habit => res.json(habit));
 });
 
