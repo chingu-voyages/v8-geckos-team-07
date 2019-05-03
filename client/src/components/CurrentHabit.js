@@ -16,7 +16,7 @@ const CurrentHabit = ({_id, habit, length, date, smart}) => {
             <p>Habit name: {habit}</p>
             <p>Start date: {startDate}</p>
             <p>Smart habits:</p>
-            <ul>{smart.map(item => <li>{item}</li>)}</ul>
+            <ul>{smart.map(item => <li key={item}>{item}</li>)}</ul>
             <p>Duration (months): {length} </p>
             <p>Countdown to finish: <Countdown date={endDate} /> </p>
         </div>
