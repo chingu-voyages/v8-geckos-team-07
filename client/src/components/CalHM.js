@@ -12,6 +12,10 @@ const effortLookup = {
     "killed-it": 4
 }
 
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
+
 // FYI - db date format is 'May 2nd 2019'
 
 
@@ -32,7 +36,18 @@ const CalHM = ({date, checkins, length}) => {
                         return 'color-empty';
                     }
                     return `color-github-${value.count}`;
-                    }}
+                }}
+
+                tooltipDataAttrs={value => {
+                    return {
+                        'data-tip': `On ${(value.date)} you ${getKeyByValue(effortLookup, value.count)}`,
+                    };
+                }}
+                showWeekdayLabels={true}
+                onClick={value => alert(`Clicked on value with count: ${value.count}`)}
+
+
+                
             />
             <ReactTooltip />
         </div>
