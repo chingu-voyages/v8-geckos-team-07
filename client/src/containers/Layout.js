@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Footer from '../components/footer'
-import HeaderLoggedIn from './HeaderLoggedIn';
 
 const propTypes = {
   children: PropTypes.node.isRequired,

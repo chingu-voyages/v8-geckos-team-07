@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Layout from '../containers/Layout';
 import SocialButtonList from './SocialButtonList';
 import { auth } from '../firebase';
 import Header from '../components/header';
