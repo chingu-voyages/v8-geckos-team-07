@@ -14,7 +14,7 @@ class UserSettings extends Component {
                 <p>Button to delete data from database</p>
 
 
-                <Link to="/Dashboard">Back to Dashboard</Link>
+                <Link to="/Dashboard" >Back to Dashboard</Link>
 
             </Layout>
         )
