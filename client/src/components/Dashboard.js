@@ -9,8 +9,8 @@ import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
 import CheckIn from './check-in';
 import CurrentHabit from './CurrentHabit';
-import Progress from './Progress';
 import moment from 'moment';
+import CalHM from '../components/CalHM';
 
 class Dashboard extends Component {
     static propTypes = {
@@ -36,7 +36,7 @@ class Dashboard extends Component {
         providerData: this.props.providerData,
         newEntry: false,
         newEntryButton: true,
-        habitData: [],
+        habitData: {checkins: []},
         user: '',
         hamburgerOpen: false,
         checkIn: false,
@@ -202,7 +202,7 @@ class Dashboard extends Component {
                 <h2>Daily Dashboard</h2>
                 {newHabitButton}
                 {checkInButton}
-                <Progress />
+                <CalHM {...this.state.habitData} />
                 <CurrentHabit {...this.state.habitData} />
             </Layout>
             </div>
