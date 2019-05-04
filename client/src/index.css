@@ -372,6 +372,10 @@ fieldset {
   }
 }
 
+/* Heat Map calendar */
+.react-calendar-heatmap text {
+  font-size: 7px;
+}
 
 /* ------------------------------- copied from SocialProfileList.css   -------------------------------*/
 
@@ -442,7 +446,7 @@ fieldset {
   font-weight: 600;
 }
 
-/* ---------- Header adjustments for small screen ---------- */
+/* ---------- Header and Log-in Circle adjustments for small screen ---------- */
 
 @media screen and (max-width:500px) {
   .headerLogin {
