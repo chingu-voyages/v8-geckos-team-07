@@ -12,6 +12,10 @@ const effortLookup = {
     "killed-it": 4
 }
 
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
+
 // FYI - db date format is 'May 2nd 2019'
 
 const CalHM = ({date, checkins, length}) => {
@@ -36,7 +40,7 @@ const CalHM = ({date, checkins, length}) => {
 
                 tooltipDataAttrs={value => {
                     return {
-                        'data-tip': `${value}`,
+                        'data-tip': `${getKeyByValue(effortLookup, value.count)}`,
                     };
                 }}
                 showWeekdayLabels={true}
