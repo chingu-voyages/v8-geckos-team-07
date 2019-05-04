@@ -481,7 +481,10 @@ fieldset {
   }
   .circle {
     border-radius: 0;
-    padding-bottom: 20%;
     border-radius: 20px;
+    width: 70%;
+    height: auto;
+    margin: 3% 10%;
+    padding: 5%;
   }
 }
