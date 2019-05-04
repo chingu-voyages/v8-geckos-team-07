@@ -12,12 +12,7 @@ const effortLookup = {
     "killed-it": 4
 }
 
-function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
-}
-
 // FYI - db date format is 'May 2nd 2019'
-
 
 const CalHM = ({date, checkins, length}) => {
     // Hack to not have terrible scaling - at least 3 months
@@ -29,7 +24,9 @@ const CalHM = ({date, checkins, length}) => {
                 endDate={moment(date).add(30 * calendarLength, 'days').toDate()}
                 values={checkins.map(checkin => ({
                     date: moment(checkin.checkinDate, 'MMMM DD YYYY').toDate(),
-                    count: effortLookup[checkin.effort]
+                    count: effortLookup[checkin.effort],
+                    dateFriendly: checkin.checkinDate,
+                    effort: checkin.effort
                 }))}
                 classForValue={(value) => {
                     if (!value) {
@@ -39,12 +36,14 @@ const CalHM = ({date, checkins, length}) => {
                 }}
 
                 tooltipDataAttrs={value => {
+                    const dataTip = value.effort ? `On ${value.dateFriendly} you ${value.effort}` :
+                                                   `You skipped this day`;
                     return {
-                        'data-tip': `On ${(value.date)} you ${getKeyByValue(effortLookup, value.count)}`,
+                       'data-tip': dataTip,
                     };
                 }}
                 showWeekdayLabels={true}
-                onClick={value => alert(`Clicked on value with count: ${value.count}`)}
+                onClick={value => alert(`Clicked on value with count: ${value ? value.count : 0}`)}
 
 
                 
