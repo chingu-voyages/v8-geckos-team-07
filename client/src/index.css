@@ -23,10 +23,6 @@ header {
     color: #ffffff;
 }
 
-#content-wrap {
-  padding-bottom: 2.5rem;
-}
-
 header h1 {
     text-align: center;
     font-size: 2.3em;
@@ -114,7 +110,7 @@ button {
   border: 2px solid #203f49;
   background-color: #ffffff;
   color:#000;
-  height: calc(100vh - 175px);
+  height: calc(100vh - 237px); /*height of header + 30px padding x2 */
   position: absolute;
     top: 173px; /*height of header */
     left: 64px; /* 30px padding x2 + 4px border x2 */
@@ -124,6 +120,7 @@ button {
   transform: translate(-120%, 0);
   transition: transform 0.3s ease;
   filter: drop-shadow(5px 4px 4px rgba(33, 33, 33, 0.3) );
+  overflow: scroll;
 }
 #sidebar.open {
   -webkit-transform: translate(-15%, 0);
