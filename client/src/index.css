@@ -450,10 +450,24 @@ fieldset {
 @media screen and (max-width:500px) {
   .headerLogin {
     position: relative;
+    align-items: flex-start;
+    width: 94%;
+    max-height: 150px;
+    padding: 5px 3% 10px 3%;
+  }
+  .headerLogin h1 {
+    font-size: 1.5em;
   }
   #hamburger-menu {
     position: absolute;
       left: 10px;
       bottom: 10px;
+  }
+  .container__profile--photo {
+    width: 35px;
+    height: 35px;
+  }
+  main {
+    margin: 15px;
   }
 }
