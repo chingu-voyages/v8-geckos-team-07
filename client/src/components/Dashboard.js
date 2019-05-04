@@ -47,6 +47,24 @@ class Dashboard extends Component {
 
     };
 
+    
+    updateHabitData = () => {
+        if(this.state.user !== ''){
+        axios.get('/api/habits/first-habit/' + this.state.user)
+            .then(res => 
+                this.setState({ habitData: res.data.data, checkIns: res.data.data.checkins }, () => {
+                    this.dateCheck()
+
+                    this.state.habitData ? this.setState({newEntry: false, newEntryButton: false, habitExist: true}) : 
+                                        this.setState({newEntry: true, newEntryButton: true, habitExist: false});
+                })
+            )
+            .catch(error =>
+                console.log(error)
+            )
+        }
+    }
+
     dateCheck = () => {
         let dates = [];
         this.state.checkIns.forEach(date => dates.push(date.checkinDate));
@@ -56,25 +74,21 @@ class Dashboard extends Component {
         }
     }
 
-    componentDidMount = () => {
+    // Set inital state in componentWillMount (user)
+
+    componentWillMount = () => {
         this.updateProviders(this.state.providerData);
         const user = this.state.providerData
-        this.setState({ user: user[0].email })
-        axios.get('/api/habits/first-habit/' + user[0].email)
-            .then(res => 
-
-                this.setState({ habitData: res.data.data, checkIns: res.data.data.checkins }, () => {
-                    this.dateCheck()
-
-                    this.state.habitData ? this.setState({newEntry: false, newEntryButton: false, 
-                        habitExist: true}) : this.setState({newEntry: true, newEntryButton: true, habitExist: false})
-                })
-            )
-            .catch(error =>
-                console.log(error)
-            )
-
+        this.setState({ user: user[0].email });
     }
+
+    // Pull in the habit data (Ajax calls) in ComponentDid Mount
+
+    componentDidMount = () => {
+        this.updateHabitData();
+    }
+
+    
 
     handleCurrentProviders = providerData => {
         this.updateProviders(providerData);
@@ -125,9 +139,7 @@ class Dashboard extends Component {
 
 
     handleCheckInSubmit = (data) => {
-        this.setState({checkIn: false, checkIns: data}, () => {
-            this.dateCheck();
-        });
+        this.updateHabitData();
     }
 
     //toggle visability of sidebar with Button
