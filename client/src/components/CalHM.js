@@ -40,7 +40,7 @@ const CalHM = ({date, checkins, length}) => {
 
                 tooltipDataAttrs={value => {
                     return {
-                        'data-tip': `${getKeyByValue(effortLookup, value.count)}`,
+                        'data-tip': `On ${(value.date)} you ${getKeyByValue(effortLookup, value.count)}`,
                     };
                 }}
                 showWeekdayLabels={true}
