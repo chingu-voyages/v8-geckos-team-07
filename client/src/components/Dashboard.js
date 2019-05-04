@@ -47,7 +47,6 @@ class Dashboard extends Component {
 
     };
 
-
     dateCheck = () => {
         let dates = [];
         this.state.checkIns.forEach(date => dates.push(date.checkinDate));
@@ -76,7 +75,6 @@ class Dashboard extends Component {
             )
 
     }
-
 
     handleCurrentProviders = providerData => {
         this.updateProviders(providerData);
@@ -158,7 +156,6 @@ class Dashboard extends Component {
         let checkInComp = null;
         let checkInButton = null;
 
-
         if (this.state.checkInButton === false){
             checkInButton = null
         } else if (this.state.habitExist){
@@ -176,7 +173,6 @@ class Dashboard extends Component {
         return (
             <div>
                 <HeaderLoggedIn {...this.state} hamburgerToggle={this.hamburgerToggle}
-                
                 
                 auth={auth.getAuth}
                 providerData={this.state.providerData}
