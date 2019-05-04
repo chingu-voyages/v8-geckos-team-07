@@ -32,7 +32,18 @@ const CalHM = ({date, checkins, length}) => {
                         return 'color-empty';
                     }
                     return `color-github-${value.count}`;
-                    }}
+                }}
+
+                tooltipDataAttrs={value => {
+                    return {
+                        'data-tip': `${value}`,
+                    };
+                }}
+                showWeekdayLabels={true}
+                onClick={value => alert(`Clicked on value with count: ${value.count}`)}
+
+
+                
             />
             <ReactTooltip />
         </div>
