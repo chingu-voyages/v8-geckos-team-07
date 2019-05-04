@@ -16,9 +16,9 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route {...this.state} path="/dashboard" component={withAuthentication(Dashboard)} />
+          <Route path="/dashboard" component={withAuthentication(Dashboard)} />
 
-          <Route path="/UserSettings" exact component={UserSettings} />
+          <Route path="/UserSettings" exact component={withAuthentication(UserSettings)} />
 
           <Route path="*" component={NotFound} />
         </Switch>
