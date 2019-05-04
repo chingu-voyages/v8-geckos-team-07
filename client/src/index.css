@@ -444,3 +444,16 @@ fieldset {
   box-shadow: 1px 3px #888888;
   font-weight: 600;
 }
+
+/* ---------- Header adjustments for small screen ---------- */
+
+@media screen and (max-width:500px) {
+  .headerLogin {
+    position: relative;
+  }
+  #hamburger-menu {
+    position: absolute;
+      left: 10px;
+      bottom: 10px;
+  }
+}
