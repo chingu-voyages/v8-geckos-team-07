@@ -18,6 +18,7 @@ function getKeyByValue(object, value) {
 
 // FYI - db date format is 'May 2nd 2019'
 
+
 const CalHM = ({date, checkins, length}) => {
     // Hack to not have terrible scaling - at least 3 months
     const calendarLength = length >= 3 ? length : 3;
@@ -26,7 +27,6 @@ const CalHM = ({date, checkins, length}) => {
             <CalendarHeatmap
                 startDate={date}
                 endDate={moment(date).add(30 * calendarLength, 'days').toDate()}
-
                 values={checkins.map(checkin => ({
                     date: moment(checkin.checkinDate, 'MMMM DD YYYY').toDate(),
                     count: effortLookup[checkin.effort]
