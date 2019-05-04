@@ -375,6 +375,26 @@ fieldset {
   cursor: pointer;
 }
 
+.confirm {
+  position: fixed;
+  text-align: center;  
+  font-family: 'Life Savers', cursive;
+  color: #203f49;
+  border: solid 2px;
+  border-radius: 5%;
+  width: 50%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+.confirm h2::after {
+  max-width: 50%;
+  transform: translateX(50%);
+}
+
 /* Modal Media Queries */
 
 @media only screen and (max-width: 600px) {
