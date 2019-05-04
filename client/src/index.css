@@ -108,8 +108,7 @@ button {
 
 /* Hamburger Menu and Off Canvas sidebar */
 #sidebar {
-  max-width: 30%;
-  width: 200px;
+  width: 400px;
   padding: 30px;
   margin: 0;
   border: 2px solid #203f49;
@@ -118,6 +117,7 @@ button {
   height: calc(100vh - 175px);
   position: absolute;
     top: 173px; /*height of header */
+    left: 64px; /* 30px padding x2 + 4px border x2 */
   z-index: 1;
   overflow: hidden;
   -webkit-transform: translate(-120%, 0);
