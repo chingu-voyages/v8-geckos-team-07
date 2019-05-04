@@ -1,7 +1,7 @@
 /* Google Fonts */
 /* font-family: 'Life Savers', cursive; */
 @import url('https://fonts.googleapis.com/css?family=Life+Savers');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css');
 
 body {
     margin: 0;
@@ -45,10 +45,18 @@ header h1 {
     text-align: left;
     font-size: 2.3em;
 }
-.headerLogin .user img {
+.headerLogin .user img, .container__profile--photo {
     width: 25px;
     height: 20px;
     padding: 2%;
+    display: block;
+}
+
+#userDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 /* Font Styles */
@@ -127,7 +135,9 @@ button {
   width: 40px;
   height: 40px;
 }
-
+#hamburger-menu:hover {
+  color: #fcbf74;
+}
 
 /* Login page Circle */
 .circle {
@@ -182,14 +192,23 @@ button {
 
 /* Logout Button */
 .btn__logout {
-  width: 70px;
-  height: 33px;
-  font-size: 0.7rem;
-  background-color: rgb(172, 43, 43);
+  width: 100%;
+  height: 20px;
+  margin: 5px auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin-bottom: 0px;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .btn__logout:hover {
-  background-color: rgb(197, 63, 63);
+  cursor: pointer;
+  background-color: #fcbf74;
+  color: #203f49;
 }
 
 /* Form Styles */
@@ -360,33 +379,41 @@ fieldset {
 /* ------------------------------- copied from SocialProfileList.css   -------------------------------*/
 
 .btn__profiles--list {
-  
   display: flex;
-  direction: rtl;
-  flex-wrap: wrap;
-  justify-content: right;
+  direction: column;
+  justify-content: center;
 }
 
-.container__profile {
+/* .container__profile {
   display: flex;
   flex-direction: row;
   align-items: right;
   margin: 10px;
-}
+} */
 
 .container__profile--photo {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
 }
 
+.container__profile p {
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
 .container__profile--btn {
-  font-size: 0.65rem;
-  width: 80px;
-  height: 28px;
-  background-color: transparent;
-  border: 1px solid red;
-  color: red;
+    width: 100%;
+    height: 20px;
+    margin: 5px auto;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    margin-bottom: 0px;
+    background-color: transparent;
+    color: #ffffff;
 }
 
 .container__profile--btn:hover {
