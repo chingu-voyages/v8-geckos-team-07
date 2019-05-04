@@ -39,9 +39,22 @@ const CalHM = ({date, checkins, length}) => {
                 }}
 
                 tooltipDataAttrs={value => {
-                    return {
-                        'data-tip': `On ${(value.date)} you ${getKeyByValue(effortLookup, value.count)}`,
-                    };
+                    if (value.date) {
+                        let tooltipDate = JSON.stringify(value.date).substring(1,11)
+                        
+                        return {
+                            'data-tip':
+
+                                `On ${tooltipDate} you ${getKeyByValue(effortLookup, value.count)}`,
+                        };
+
+                    }else{
+                        return {
+                            'data-tip': `Nothing`,
+                        };
+                    }
+                    
+         
                 }}
                 showWeekdayLabels={true}
                 onClick={value => alert(`Clicked on value with count: ${value.count}`)}
