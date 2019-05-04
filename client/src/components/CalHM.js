@@ -21,7 +21,7 @@ const CalHM = ({date, checkins, length, selectCheckin}) => {
         <div>
             <CalendarHeatmap
                 startDate={moment(date).subtract(1,'days')}
-                endDate={moment(date).add(30 * calendarLength, 'days').toDate()}
+                endDate={moment(date).add(30 * calendarLength, 'days')}
                 values={checkins.map(checkin => ({
                     date: moment(checkin.checkinDate, 'MMMM DD YYYY').toDate(),
                     count: effortLookup[checkin.effort],
