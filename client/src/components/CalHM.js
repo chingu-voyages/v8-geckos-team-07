@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import ReactTooltip from 'react-tooltip';
@@ -14,7 +14,7 @@ const effortLookup = {
 
 // FYI - db date format is 'May 2nd 2019'
 
-const CalHM = ({date, checkins, length}) => {
+const CalHM = ({date, checkins, length, selectCheckin}) => {
     // Hack to not have terrible scaling - at least 3 months
     const calendarLength = length >= 3 ? length : 3;
     return (
@@ -43,7 +43,14 @@ const CalHM = ({date, checkins, length}) => {
                     };
                 }}
                 showWeekdayLabels={true}
-                onClick={value => alert(`Clicked on value with count: ${value ? value.count : 0}`)}
+                onClick = { (value) => { 
+                        if(value) { 
+                            selectCheckin(value.dateFriendly);
+                        } else {
+                            selectCheckin();
+                        }
+                    }
+                }
 
 
                 

@@ -9,6 +9,7 @@ import HeaderLoggedIn from '../containers/HeaderLoggedIn';
 import NewHabit from './NewHabit';
 import CheckIn from './check-in';
 import CurrentHabit from './CurrentHabit';
+import CheckinDetail from './CheckinDetail';
 import moment from 'moment';
 import CalHM from '../components/CalHM';
 
@@ -41,8 +42,8 @@ class Dashboard extends Component {
         hamburgerOpen: false,
         checkIn: false,
         habitExist: false,
-
         checkIns: [],
+        currentCheckin: undefined,
         checkInButton: true,
 
     };
@@ -142,6 +143,16 @@ class Dashboard extends Component {
         this.updateHabitData();
     }
 
+    handleSelectCheckin = (date) => {
+        if(date) {
+            this.setState({
+                currentCheckin: this.state.checkIns.find(checkIn => checkIn.checkinDate === date)
+            });
+        } else {
+            this.setState({currentCheckin: undefined});
+        }
+    }
+
     //toggle visability of sidebar with Button
     hamburgerToggle = () => {
         this.setState((prevState) => ({
@@ -156,6 +167,7 @@ class Dashboard extends Component {
         }))
     }
 
+   
     render() {
 
         let newHabitButton = null;
@@ -214,7 +226,8 @@ class Dashboard extends Component {
                 <h2>Daily Dashboard</h2>
                 {newHabitButton}
                 {checkInButton}
-                <CalHM {...this.state.habitData} />
+                <CalHM {...this.state.habitData} selectCheckin={this.handleSelectCheckin}/>
+                {this.state.currentCheckin && <CheckinDetail {...this.state.currentCheckin} />}
                 <CurrentHabit {...this.state.habitData} />
             </Layout>
             </div>
