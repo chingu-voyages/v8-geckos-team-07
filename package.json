@@ -1,0 +1,24 @@
+{
+  "name": "habit-tracker-server",
+  "version": "1.0.0",
+  "description": "server side of the habit tracker being built with react",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently  \"node index.js\" \"cd client && npm start\"",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "server": "nodemon index.js",
+    "postinstall": "cd client && npm install"
+  },
+  "author": "patrick connolly",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

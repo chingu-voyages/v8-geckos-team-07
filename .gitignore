@@ -1,4 +1,17 @@
 ### Node ###
+
+package-lock.json
+yarn.lock
+
+# misc
+.DS_Store
+.env
+.env.test
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Logs
 logs
 *.log
@@ -32,6 +45,7 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
+/build
 
 # Dependency directories
 node_modules/
@@ -55,10 +69,6 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-.env.test
-
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
@@ -79,3 +89,13 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#---- copied from CRA; client directory ----
+# dependencies
+
+/.pnp
+.pnp.js
+
+
+
+

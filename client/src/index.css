@@ -1,0 +1,523 @@
+/* Google Fonts */
+/* font-family: 'Life Savers', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Life+Savers');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('./images/bg.svg') repeat;
+    background-size: 60px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    color: #203f49;
+}
+
+/* Home page header */
+header {
+    background-color: #203f49;
+    width: 94%;
+    max-height: 150px;
+    padding: 15px 3% 10px 3%;
+    color: #ffffff;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.3em;
+    font-family: 'Life Savers', cursive;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+/* Header for when user logged in */
+.headerLogin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerLogin h1 {
+    text-align: left;
+    font-size: 2.3em;
+}
+.headerLogin .user img, .container__profile--photo {
+    width: 25px;
+    height: 20px;
+    padding: 2%;
+    display: block;
+}
+
+#userDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Font Styles */
+h2 {
+    font-size: 1.5em;
+    font-family: 'Life Savers', cursive;
+    line-height: 1.3;
+    color: #203f49;
+}
+h2::after {
+    content:'';
+    display: block;
+    border-bottom: 2px solid #203f49;
+    max-width: 60%;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+    color: #203f49;
+}
+
+a h3:hover {
+  color: #3367d6;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* CSS Styling */
+main {
+    padding:4% 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid #203f49;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin: 30px 10%;
+}
+footer {
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+a {
+  color: #203f49;
+  text-decoration: underline;
+}
+a:hover {
+  color: #3367d6;
+}
+button {
+  /* removes default button styles */
+  border: none;
+  background-color: none;
+}
+
+/* Hamburger Menu and Off Canvas sidebar */
+#sidebar {
+  width: 400px;
+  padding: 30px;
+  margin: 0;
+  border: 2px solid #203f49;
+  background-color: #ffffff;
+  color:#000;
+  height: calc(100vh - 237px); /*height of header + 30px padding x2 */
+  position: absolute;
+    top: 173px; /*height of header */
+    left: 64px; /* 30px padding x2 + 4px border x2 */
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transform: translate(-120%, 0);
+  transform: translate(-120%, 0);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(5px 4px 4px rgba(33, 33, 33, 0.3) );
+  overflow: scroll;
+}
+#sidebar.open {
+  -webkit-transform: translate(-15%, 0);
+  transform: translate(-15%,0);
+}
+#hamburger-menu {
+  background-color: #203f49;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+}
+#hamburger-menu:hover {
+  color: #fcbf74;
+}
+
+/* Login page Circle */
+.circle {
+    text-align: center;
+    background-color:#fff;
+    padding:10%;
+    margin:2% auto;
+    border-radius: 50%;
+      width: 275px;
+      height: 275px;
+    border: 2px solid #203f49;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+.circle h2::after {
+    border-bottom: none;
+}
+.circle ol {
+  text-align: left;
+}
+
+
+/*Google Buttons for Log-in */
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
+.btn__social {
+  width: 191px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+.btn--google {
+  background-color:#4285F4;
+  color:#ffffff;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2.8;
+  margin:0 auto;
+}
+.btn--google img {
+  height: 40px;
+  margin:0 5px 0 0;
+  padding:0;
+  float: left;
+}
+.btn--google:hover {
+  background-color:#3367d6;
+}
+
+/* Logout Button */
+.btn__logout {
+  width: 100%;
+  height: 20px;
+  margin: 5px auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin-bottom: 0px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.btn__logout:hover {
+  cursor: pointer;
+  background-color: #fcbf74;
+  color: #203f49;
+}
+
+/* Form Styles */
+.newHabit, .daily-check-in {
+  color: #203f49;
+  border: solid 2px;
+  border-radius: 20px;
+  width: 50%;
+  margin: 30px auto;
+  background-color: white;
+}
+form {
+  display: grid;
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+form label:first-of-type {
+  margin-top: 0;
+}
+label, fieldset legend  {
+  margin: 20px 0px 5px 0px;
+  font-weight: 600;
+  font-family: 'Life Savers', cursive;
+}
+fieldset label {
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  vertical-align: middle;
+}
+fieldset p {
+  font-size: 0.8em;
+}
+fieldset input {
+  vertical-align: middle;
+}
+input, form button {
+  height: 15px;
+  background-color: #d4d4d6;
+  border: none;
+  padding: 10px;
+}
+select {
+  background-color: #d4d4d6;
+  height: 35px;
+}
+textarea {
+  background-color: #d4d4d6;
+  height: 50px;
+}
+fieldset {
+  border:0;
+  margin: 0;
+  padding: 0;
+  font-size: .8rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  width: 110px;
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #fcbf74;
+}
+
+
+.submission {
+	position: fixed;
+	top: 40%;
+	left: 30%;
+	background-color: #203f49;
+	border: 1px solid #203f49;
+	border-radius: 5%;
+	color: white;
+	padding: 20px;
+	text-align: center;
+  font-size: .8rem;
+}
+
+.subdisplay-block {
+	display: block;
+}
+
+.subdisplay-none {
+	display: none;
+}
+
+.okbutton {
+	width: 50px;
+  height: 40px;
+}
+
+.okbutton:hover {
+	cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    overflow-y: scroll;
+}
+
+.display-block {
+    display: block;
+} 
+
+.display-none {
+    display: none;
+}
+
+.newHabit {
+    position: fixed;
+    text-align: center;
+    font-family: 'Life Savers', cursive;
+    color: #203f49;
+    border: solid 2px;
+    border-radius: 5%;
+    width: 50%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+  color: red;
+  font-weight: 600;
+  font-size: .8rem;
+  margin: 0;
+}
+
+.header-button-menu {
+  background: #72B0EC;
+  border-radius: 1000px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.confirm {
+  position: fixed;
+  text-align: center;  
+  font-family: 'Life Savers', cursive;
+  color: #203f49;
+  border: solid 2px;
+  border-radius: 5%;
+  width: 50%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+.confirm h2::after {
+  max-width: 50%;
+  transform: translateX(50%);
+}
+
+/* Modal Media Queries */
+
+@media only screen and (max-width: 600px) {
+
+  .newHabit, .daily-check-in {
+    width: 80%;
+  }
+}
+
+/* Heat Map calendar */
+.react-calendar-heatmap text {
+  font-size: 7px;
+}
+
+/* ------------------------------- copied from SocialProfileList.css   -------------------------------*/
+
+.btn__profiles--list {
+  display: flex;
+  direction: column;
+  justify-content: center;
+}
+
+/* .container__profile {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  margin: 10px;
+} */
+
+.container__profile--photo {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+}
+
+.container__profile p {
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+.container__profile--btn {
+    width: 100%;
+    height: 20px;
+    margin: 5px auto;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    margin-bottom: 0px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.container__profile--btn:hover {
+  background-color: red;
+  color: white;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+.widget {
+    border-width: thin;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.habitButton {
+  padding: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-family: 'Life Savers', cursive;
+  background-color: #203f49;
+  color: #ffffff;
+}
+.habitButton:hover {
+  cursor: pointer;
+  box-shadow: 1px 3px #888888;
+  font-weight: 600;
+}
+
+/* ---------- Header and Log-in Circle adjustments for small screen ---------- */
+
+@media screen and (max-width:500px) {
+  .headerLogin {
+    position: relative;
+    align-items: flex-start;
+    width: 94%;
+    max-height: 150px;
+    padding: 5px 3% 10px 3%;
+  }
+  .headerLogin h1 {
+    font-size: 1.5em;
+  }
+  #hamburger-menu {
+    position: absolute;
+      left: 10px;
+      bottom: 10px;
+  }
+  .container__profile--photo {
+    width: 35px;
+    height: 35px;
+  }
+  #sidebar {
+      max-width: 40%;
+      width: calc(100% - 30px);
+      padding: 30px;
+      margin-left: 30px;
+      position: absolute;
+        top: 123px; /*height of header */
+        left: 0;
+  }
+  main {
+    margin: 15px;
+  }
+  .circle {
+    border-radius: 0;
+    border-radius: 20px;
+    width: 70%;
+    height: auto;
+    margin: 3% 10%;
+    padding: 5%;
+  }
+}
