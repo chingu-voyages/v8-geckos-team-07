@@ -36,8 +36,7 @@ const CalHM = ({date, checkins, length, selectCheckin}) => {
                 }}
 
                 tooltipDataAttrs={value => {
-                    const dataTip = value.effort ? `On ${value.dateFriendly} you ${value.effort}` :
-                                                   ``;
+                    const dataTip = value.effort ? `On ${value.dateFriendly} you ${value.effort}` : ``;
                     return {
                        'data-tip': dataTip,
                     };

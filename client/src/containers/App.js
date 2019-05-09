@@ -7,7 +7,6 @@ import UserSettings from '../components/UserSettings';
 import NotFound from '../components/NotFound';
 import ReactGA from 'react-ga';
 
-
 function initializeReactGA() {
   ReactGA.initialize('UA-139627569-1');
   ReactGA.pageview('/dashboard');

@@ -44,7 +44,6 @@ class UserSettings extends Component {
         return (
             <Layout>
                 <h2>User Settings </h2>
-                
                 <h3>Account Info</h3>
                 <p>Account: {this.state.user}</p>
                 {this.state.habitTracked && 
