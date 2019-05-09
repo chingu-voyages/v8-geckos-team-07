@@ -7,10 +7,11 @@
     "firebase": "^5.9.1",
     "moment": "^2.24.0",
     "react": "^16.8.4",
-    "react-countdown-now": "^2.1.0",
     "react-calendar-heatmap": "^1.8.0",
+    "react-countdown-now": "^2.1.0",
     "react-delay": "^0.1.0",
     "react-dom": "^16.8.4",
+    "react-ga": "^2.5.7",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-tooltip": "^3.10.0"
