@@ -32,12 +32,11 @@ const CalHM = ({date, checkins, length, selectCheckin}) => {
                     if (!value) {
                         return 'color-empty';
                     }
-                    return `color-github-${value.count}`;
+                    return `color-checkin-${value.count}`;
                 }}
 
                 tooltipDataAttrs={value => {
-                    const dataTip = value.effort ? `On ${value.dateFriendly} you ${value.effort}` :
-                                                   `You skipped this day`;
+                    const dataTip = value.effort ? `On ${value.dateFriendly} you ${value.effort}` : ``;
                     return {
                        'data-tip': dataTip,
                     };

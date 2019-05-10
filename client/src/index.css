@@ -405,8 +405,20 @@ fieldset {
 }
 
 /* Heat Map calendar */
-.react-calendar-heatmap text {
-  font-size: 7px;
+.react-calendar-heatmap .color-checkin-0 {
+  fill: #ededed;
+}
+.react-calendar-heatmap .color-checkin-1 {
+  fill: #808080;
+}
+.react-calendar-heatmap .color-checkin-2 {
+  fill: #7fa8d1;
+}
+.react-calendar-heatmap .color-checkin-3 {
+  fill: #49729b;
+}
+.react-calendar-heatmap .color-checkin-4 {
+  fill: #254e77;
 }
 
 /* ------------------------------- copied from SocialProfileList.css   -------------------------------*/
