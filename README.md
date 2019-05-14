@@ -25,13 +25,10 @@ https://youtu.be/44tqqWjBNVI
 
 # Team
 
-[@patricktownley](https://github.com/patricktownley)
-
-[@paulywill](https://github.com/paulywill)
-
-[@pjconnolly12](https://github.com/pjconnolly12)
-
-[@SaraSweetie](https://github.com/SaraSweetie)
+* [@patricktownley](https://github.com/patricktownley)
+* [@paulywill](https://github.com/paulywill)
+* [@pjconnolly12](https://github.com/pjconnolly12)
+* [@SaraSweetie](https://github.com/SaraSweetie)
 
 # Tech Stack
 
