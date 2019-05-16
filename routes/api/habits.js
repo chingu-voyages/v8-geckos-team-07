@@ -46,13 +46,13 @@ router.delete('/habit/:id', (req, res) => {
 	Habit.findByIdAndDelete(id)
 		.then(habit => {
 			res.json({
-				confimration: 'success',
+				confirmation: 'success',
 				data: habit
 			})
 		})
 		.catch(err => {
 			res.json({
-				confimration: 'fail',
+				confirmation: 'fail',
 				message: 'Habit not found!'
 			})
 		})
