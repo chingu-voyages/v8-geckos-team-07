@@ -23,12 +23,6 @@ https://habit-tracker-gecko.herokuapp.com
 
 https://youtu.be/44tqqWjBNVI
 
-# Team
-
-* [@patricktownley](https://github.com/patricktownley)
-* [@paulywill](https://github.com/paulywill)
-* [@pjconnolly12](https://github.com/pjconnolly12)
-* [@SaraSweetie](https://github.com/SaraSweetie)
 
 # Tech Stack
 
@@ -37,3 +31,7 @@ https://youtu.be/44tqqWjBNVI
 * [ExpressJS](https://expressjs.com/en/api.html)
 * [ReactJS](https://reactjs.org/)
 * [NodeJS](https://nodejs.org/en/)
+
+# Team
+
+<a href="https://github.com/chingu-voyages/v8-geckos-team-07/graphs/contributors"> <img src="https://contributors-img.firebaseapp.com/image?repo=chingu-voyages/v8-geckos-team-07" /> </a>
