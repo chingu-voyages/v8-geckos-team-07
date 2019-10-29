@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
 import GoogleLogo from '../images/btn_google_dark_normal_ios.svg'
 
@@ -72,4 +71,4 @@ const SocialButtonList = ({ history, buttonList, auth, currentProviders }) => {
 SocialButtonList.propTypes = propTypes;
 SocialButtonList.defaultProps = defaultProps;
 
-export default withRouter(SocialButtonList);
+export default SocialButtonList;

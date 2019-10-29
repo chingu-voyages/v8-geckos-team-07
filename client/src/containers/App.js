@@ -8,7 +8,7 @@ import UserSettings from '../components/UserSettings';
 import NotFound from '../components/NotFound';
 
 function initializeReactGA() {
-  ReactGA.initialize('UA-139627569-1');
+  ReactGA.initialize('UA-139627569-1', { testMode: true });
   ReactGA.pageview('/dashboard');
 }
 initializeReactGA();

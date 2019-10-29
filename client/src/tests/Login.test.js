@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Login from '../components/Login';
 
 // TODO: list the test required
@@ -13,12 +13,12 @@ describe('Login page renders correctly', () => {
     );
 
     // get root node created by Login
-    const vc = getByTestId('Login');
+    const LOGIN = getByTestId('Login');
 
     // should have class "habit-tracker"
-    expect(vc.classList).toContain('habit-tracker');
+    expect(LOGIN.classList).toContain('habit-tracker');
 
-    // should fail
-    expect(vc.childElementCount).toBe(16);
+    // should be 3 elements: header; circle; footer
+    expect(LOGIN.childElementCount).toBe(3);
   });
 });
