@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
-import withAuthentication from '../containers/withAuthentication';
+import withAuthentication from './withAuthentication';
 import UserSettings from '../components/UserSettings';
 import NotFound from '../components/NotFound';
-import ReactGA from 'react-ga';
 
 function initializeReactGA() {
   ReactGA.initialize('UA-139627569-1');
   ReactGA.pageview('/dashboard');
 }
-initializeReactGA()
+initializeReactGA();
 
 class App extends Component {
   
