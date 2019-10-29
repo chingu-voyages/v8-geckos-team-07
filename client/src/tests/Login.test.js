@@ -20,5 +20,9 @@ describe('Login page renders correctly', () => {
 
     // should be 3 elements: header; circle; footer
     expect(LOGIN.childElementCount).toBe(3);
+    expect(LOGIN.childNodes[0].tagName).toEqual('HEADER');
+    // TODO: refactor CIRCLE into separate component
+    expect(LOGIN.childNodes[1].tagName).toEqual('DIV');
+    expect(LOGIN.childNodes[2].tagName).toEqual('FOOTER');
   });
 });
