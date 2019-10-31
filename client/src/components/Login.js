@@ -26,8 +26,8 @@ class Login extends Component {
   }
 
   render() {
-    return (
-      <div>
+    return ( 
+     <div data-testid="Login" className="habit-tracker">
         <Header />
         <div className="circle">
             <h2>A simple way to measure whether you did a habit.</h2>
