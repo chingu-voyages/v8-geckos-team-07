@@ -1,8 +1,6 @@
 language: node_js
 node_js:
 - lts/*
-script:
-- cd client && npm run test
 env:
   global:
   - secure: jEa7zOzdP8zwZZ6GUrlW/pRcUlghSjjp3ruODWxoA2arLGMDLpgvKQrtVlloYfpXfzE9fjXVexJss0s+Ri+sRpIUZE+o8mvyEYS5qZQqwKDuTs2KUmXZOuue62Iiq9FaE0BSxzEat8cqsGeZ/qkbOxm0rJHcYVlZGjRwKouirDBgG3rkqU22KQwukgkSBvNEf38+nCqbplFtKV77L5YNUJ6LF7h8/VrLs1/R/RyO0GGakP37UrojgLbSF8/LTchtqZZkhs0Yz9AsmGiZ3wo5QMaKSP6w2lcCmu22UJaLd9/X7dWaX0l73HB9wSR8uKa3aE013fT8eFFWe6lRHiyCz4WTgqDPP88Mx8QD9uJ2P3bCYGX9sNimGXLJIk1DwDUSNFAvmnH2ECGRC+dU4rtIheP7KGhk3ariLHp+WXsCExVuYtPB8Bo90/jl8gW+lo6QSLnz3xKFlv2mxjvOY2hOlcvh7uMYIT5m3f3BBnTIuU/RLMKpsVbTp+yiU/S/dJyqpfOcutKa9rhd147CW5FZTr7wDhDR/PWK+N6RslAsoHX2NCLcdMxk6p+plQydY+Lv3CsB9DeY0Z4PoaVxzy+LofnTyypusDQ5YDggnWJE5hBrNI1QsEGBNvrbM/6te+GUeRlM7clE/STwy2L9lT3+yWktrihopktUcxvdjjpP2Qk=
