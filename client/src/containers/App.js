@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ReactGA from 'react-ga';
 import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
 import withAuthentication from './withAuthentication';
