@@ -4,9 +4,14 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.3",
     "firebase": "^7.2.2",
+=======
+    "axios": ">=0.21.1",
+    "firebase": "^5.9.1",
+>>>>>>> main
     "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-calendar-heatmap": "^1.8.0",
